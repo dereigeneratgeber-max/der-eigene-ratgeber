@@ -1,0 +1,57 @@
+name: Beitrag produzieren
+
+on:
+  workflow_dispatch:
+    inputs:
+      beitrag:
+        description: "Beitragsdatei (Pfad im Repo)"
+        required: true
+        default: "beispiel_video.json"
+  repository_dispatch:
+    types: [produzieren]
+
+jobs:
+  produzieren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Werkzeuge installieren
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+          mkdir -p fonts
+          B=https://raw.githubusercontent.com/google/fonts/main/ofl
+          curl -sSfL -o fonts/Poppins-Bold.ttf $B/poppins/Poppins-Bold.ttf
+          curl -sSfL -o fonts/Poppins-SemiBold.ttf $B/poppins/Poppins-SemiBold.ttf
+          curl -sSfL -o fonts/Poppins-Medium.ttf $B/poppins/Poppins-Medium.ttf
+          curl -sSfL -o fonts/Lora.ttf "$B/lora/Lora%5Bwght%5D.ttf"
+      - name: Beitrag bereitstellen
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload.beitrag) }}
+          DATEI: ${{ github.event.inputs.beitrag }}
+        run: |
+          mkdir -p ausgabe
+          if [ -n "$DATEI" ]; then cp "$DATEI" beitrag.json; else echo "$PAYLOAD" > beitrag.json; fi
+          python -c "import json;b=json.load(open('beitrag.json'));print(b['einheit_id'],b['serie'],b.get('stil'))"
+      - name: Video oder Karussell erzeugen
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: |
+          SERIE=$(python -c "import json;print(json.load(open('beitrag.json'))['serie'])")
+          ID=$(python -c "import json;print(json.load(open('beitrag.json'))['einheit_id'])")
+          if [ "$SERIE" = "Was die Forschung sagt" ] || [ "$SERIE" = "Satz aus dem Buch" ]; then
+            python carousel.py beitrag.json auto ausgabe
+          else
+            python render.py beitrag.json auto "ausgabe/${ID}.mp4" --stimme elevenlabs
+          fi
+          ls -la ausgabe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: beitrag
+          path: ausgabe/
+          retention-days: 14
