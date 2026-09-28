@@ -1,0 +1,48 @@
+{
+ "einheit_id": "E-226",
+ "serie": "Was die Forschung sagt",
+ "winkel": "Forschung: Eine Theorie, die ihre eigenen Urheber korrigiert haben.",
+ "mitnahme": "Nicht Hilflosigkeit, sondern das Erleben von Kontrolle wird gelernt, und es wirkt über Bereiche hinweg.",
+ "hook_typ": "Umkehrung",
+ "hook": "Hilflosigkeit wird nicht erlernt.",
+ "hook_varianten": [
+  "Hilflosigkeit wird nicht erlernt.",
+  "Gelernt wird nicht Ohnmacht, sondern Kontrolle.",
+  "Das Gegenteil von Hilflosigkeit wird gelernt."
+ ],
+ "sprechtext": "",
+ "bildschirmtext": [
+  "Hilflosigkeit wird nicht erlernt.",
+  "Gelernt wird das Gegenteil: Kontrolle.",
+  "Eine Theorie, fünfzig Jahre später korrigiert."
+ ],
+ "folien": [
+  "Hilflosigkeit wird nicht erlernt.",
+  "Fünfzig Jahre lang glaubten Forscher: Anhaltende Belastung bringt uns bei, hilflos zu werden, wie ein trainiertes Verhalten.",
+  "Maier und Seligman korrigierten ihre eigene Theorie: Passivität ist die Grundreaktion auf Belastung, keine erlernte Reaktion.",
+  "Gelernt wird das Gegenteil, dass Kontrolle möglich ist. Diese Erfahrung schützt später auch in anderen Bereichen.",
+  "Grenze: Der Befund stammt zunächst aus dem Tiermodell, nicht aus Studien mit belasteten Menschen.",
+  "Für uns heißt das: Erlebte Kontrolle bleibt nicht an einen Bereich gebunden, sie kann weiterwirken.",
+  "Quelle: Maier & Seligman (2016), Learned helplessness at fifty."
+ ],
+ "instagram_caption": "Fünfzig Jahre lang dachte man, Hilflosigkeit werde erlernt. Neue Forschung zeigt: Es ist umgekehrt. Wo hast du zuletzt erlebt, dass dein Handeln etwas bewirkt?",
+ "instagram_hashtags": [
+  "#Forschung",
+  "#Kontrolle",
+  "#Psychologie",
+  "#DerEigeneRatgeber"
+ ],
+ "tiktok_text": "Hilflosigkeit wird nicht gelernt, das Gegenteil schon, zeigt neue Forschung.",
+ "tiktok_hashtags": [
+  "#Forschung",
+  "#Psychologie",
+  "#Mindset"
+ ],
+ "youtube_titel": "Wird Hilflosigkeit wirklich erlernt? Neue Forschung sagt nein",
+ "youtube_beschreibung": "Eine fünfzig Jahre alte Theorie wurde korrigiert. Aus dem Buch: Der eigene Ratgeber.",
+ "buchhinweis": false,
+ "quelle": "Maier, S. F., & Seligman, M. E. P. (2016). Learned helplessness at fifty",
+ "stimmung_visual": "Labor, ruhiges Licht",
+ "wortzahl": 0,
+ "stil": "klar"
+}
