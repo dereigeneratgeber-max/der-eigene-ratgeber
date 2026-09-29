@@ -79,7 +79,7 @@ def cmd_plan(a):
     s = status(); jetzt = datetime.now(ZoneInfo('Europe/Berlin'))
     faellig = []
     for b in sorted(lade_chargen(), key=lambda b: b['_zeit']):
-        if b['id'] in s and s[b['id']].get('buffer'): continue
+        if b['id'] in s and s[b['id']].get('fertig'): continue
         if b['_zeit'] < jetzt + timedelta(minutes=30): continue          # zu spät, wird übersprungen
         if b['_zeit'] > jetzt + timedelta(days=a.tage): continue
         if not b.get('freigegeben'): continue            # nur auf der Freigabe-Seite freigegebene Beiträge
@@ -170,13 +170,13 @@ def cmd_veroeffentlichen(a):
         ziele = []
         if b['format'] == 'video':
             asset = [{'video': {'url': urls[0], 'metadata': {'thumbnailOffset': 300}}}]
-            ziele += [('instagram', ig, asset, {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'firstComment': b['angepinnter_kommentar'], 'isAiGenerated': True}}),
+            ziele += [('instagram', ig, asset, {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'isAiGenerated': True}}),
                       ('tiktok', tt, asset, {'tiktok': {'isAiGenerated': True}}),
                       ('youtube', yt, asset, {'youtube': {'title': b['youtube_titel'][:100], 'privacy': 'public', 'madeForKids': False,
-                                                          'notifySubscribers': True, 'embeddable': True, 'isAiGenerated': True}})]
+                                                          'notifySubscribers': True, 'embeddable': True, 'isAiGenerated': True, 'categoryId': '27'}})]
         else:
             asset = [{'image': {'url': u}} for u in urls[:10]]
-            ziele += [('instagram', ig, asset, {'instagram': {'type': 'carousel', 'shouldShareToFeed': True, 'firstComment': b['angepinnter_kommentar'], 'isAiGenerated': False}})]
+            ziele += [('instagram', ig, asset, {'instagram': {'type': 'carousel', 'shouldShareToFeed': True, 'isAiGenerated': False}})]
         st.setdefault('buffer', {})
         for dienst, text, assets, meta in ziele:
             if dienst not in ch: print(f'  {dienst}: nicht in Buffer verbunden – übersprungen'); continue
@@ -193,6 +193,7 @@ def cmd_veroeffentlichen(a):
                 else: raise
             if 'post' in r: st['buffer'][dienst] = r['post']['id']; print(f'  {bid} → {dienst}: geplant für {due}')
             else: fehler.append(f"{bid} {dienst}: {r.get('message')}")
+        if all(d in st['buffer'] for d, *_ in ziele if d in ch): st['fertig'] = True
         s[bid] = st; speichere_status(s)
     if fehler:
         print('FEHLER:\n' + '\n'.join(fehler)); sys.exit(1)
