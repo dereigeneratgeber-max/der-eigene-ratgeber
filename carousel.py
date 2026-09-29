@@ -37,8 +37,8 @@ def slides(beitrag, style, outdir):
     f_kick = R.font('Poppins-SemiBold.ttf', 34)
     f_small = R.font('Poppins-Medium.ttf', 30)
     folien = beitrag['folien']; n = len(folien)
-    serie = beitrag['serie'].upper()
-    is_quote = beitrag['serie'] == 'Satz aus dem Buch'
+    serie = beitrag['serie'].upper() + (f" #{beitrag['serie_nummer']}" if beitrag.get('serie_nummer') else '')
+    is_quote = beitrag['serie'] in ('Ein Satz', 'Satz aus dem Buch')
     paths = []
     base = bg_image(style)
     for i, txt in enumerate(folien):
