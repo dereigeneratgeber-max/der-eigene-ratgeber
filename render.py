@@ -15,8 +15,12 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 FONT = lambda n: os.path.join(BASE, 'fonts', n) if os.path.exists(os.path.join(BASE, 'fonts', n)) else os.path.join(BASE, n)
 NAVY = (31, 47, 74); SKY = (131, 177, 221); SKY_L = (227, 237, 247); WHITE = (255, 255, 255)
 RED = (214, 69, 52); GREY = (96, 110, 130)
-PAUSE = 0.38          # Pause zwischen Sätzen (s)
-HOOK_HOLD = 0.6       # Aussage wirkt kurz nach
+PAUSE = 0.38          # Pause zwischen Sätzen (s, nur Piper)
+HOOK_HOLD = 0.45      # Aussage wirkt kurz nach
+# Sicherer Bereich: rechts liegen bei TikTok/Reels die Buttons, unten die Beschreibung
+CX = 505              # Mittelachse für Text (leicht links der Bildmitte)
+CAP_W = 660           # max. Breite eines Untertitel-Blocks
+HOOK_W = 720          # max. Breite der Aussage
 END_CARD = 2.4        # Schlusstafel mit Buch (nur bei Buchhinweis)
 
 # ---------- Text und Stimme ----------
@@ -34,7 +38,7 @@ def _el_request(text):
     import base64, urllib.request, urllib.error
     key = os.environ['ELEVENLABS_API_KEY'].strip(); voice = os.environ['ELEVENLABS_VOICE_ID'].strip()
     body = json.dumps({'text': text, 'model_id': os.environ.get('ELEVENLABS_MODEL', 'eleven_multilingual_v2'),
-                       'voice_settings': {'stability': 0.55, 'similarity_boost': 0.8, 'style': 0.15, 'speed': 0.95}}).encode()
+                       'voice_settings': {'stability': 0.55, 'similarity_boost': 0.8, 'style': 0.15, 'speed': float(os.environ.get('ELEVENLABS_SPEED', '1.1'))}}).encode()
     req = urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128',
                                  data=body, headers={'xi-api-key': key, 'Content-Type': 'application/json'})
     try:
@@ -256,24 +260,22 @@ def hook_satzzahl(sentences, hook):
     return 1
 
 def chunks_of(words, d, f, maxw):
-    """Untertitel-Blöcke von 2-4 Wörtern: bricht an Satzzeichen, sonst nach 3 Wörtern."""
+    """Untertitel-Blöcke von 1-4 Wörtern, die immer in maxw passen: bricht nach 3 Wörtern oder an Satzzeichen."""
     out = []
     by_sent = {}
     for k, w_ in enumerate(words): by_sent.setdefault(w_[3], []).append(k)
+    wid = lambda ids: d.textlength(' '.join(words[x][0] for x in ids), font=f)
     for si in sorted(by_sent):
-        ids = by_sent[si]; cur = []
-        for j, k in enumerate(ids):
-            cand = cur + [k]
-            if cur and d.textlength(' '.join(words[x][0] for x in cand), font=f) > maxw:
-                out.append(cur); cur = [k]
-            else:
-                cur = cand
-            rest = len(ids) - j - 1
-            if (words[k][0].endswith(PUNCT) and len(cur) >= 2 and rest != 1) or (len(cur) >= 3 and rest not in (1,)) or len(cur) >= 4:
-                if rest == 0 or len(cur) >= 2: out.append(cur); cur = []
-        if cur:
-            if out and len(cur) == 1 and len(out[-1]) < 4 and words[out[-1][0]][3] == si: out[-1] += cur
-            else: out.append(cur)
+        cur, blocks = [], []
+        for k in by_sent[si]:
+            if cur and (len(cur) >= 3 or wid(cur + [k]) > maxw or (words[cur[-1]][0].endswith(PUNCT) and len(cur) >= 2)):
+                blocks.append(cur); cur = []
+            cur.append(k)
+        if cur: blocks.append(cur)
+        # einzelnes Wort am Satzende an den vorigen Block hängen, wenn es passt
+        if len(blocks) >= 2 and len(blocks[-1]) == 1 and len(blocks[-2]) < 4 and wid(blocks[-2] + blocks[-1]) <= maxw:
+            blocks[-2] += blocks.pop()
+        out += blocks
     return out
 
 def render(beitrag, style, out, voice):
@@ -284,7 +286,7 @@ def render(beitrag, style, out, voice):
     with_end = bool(beitrag.get('buchhinweis'))
     with tempfile.TemporaryDirectory() as tmp:
         vt, sr, words, timing = build_audio(sentences, n_hook, voice, tmp)
-        tail = END_CARD if with_end else 0.7
+        tail = END_CARD if with_end else 0.5
         total = len(vt) / sr + tail
         vt = np.pad(vt, (0, int(total * sr) - len(vt)))
         mix = vt + pad_music(len(vt), sr)
@@ -292,26 +294,32 @@ def render(beitrag, style, out, voice):
         bg = Background(style)
         P = PAL[style]
         f_hook = font('Lora.ttf', 104, 'Bold') if style == 'tusche' else font('Poppins-Bold.ttf', 104)
-        f_cap = font('Poppins-Bold.ttf', 106)
+        f_cap = font('Poppins-Bold.ttf', 84)
         f_top = font('Lora.ttf', 44, 'Medium') if style == 'tusche' else font('Poppins-SemiBold.ttf', 42)
         f_lab = font('Poppins-Medium.ttf', 34); f_end = font('Poppins-Bold.ttf', 76); f_end2 = font('Lora.ttf', 44, 'Regular')
         cover = buchcover(); cover.thumbnail((620, 870), Image.LANCZOS)
         n = int(total * FPS)
         probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
-        cap_w = W - 280
+        cap_w = CAP_W
         expl = [w_ for w_ in words if w_[3] >= n_hook]
         chs = chunks_of(expl, probe, f_cap, cap_w)
         ch_start = [expl[c[0]][1] for c in chs]
+        def fit_cap(txt):   # Schrift je Block verkleinern, bis er in den sicheren Bereich passt
+            for sz in range(84, 47, -4):
+                f_ = font('Poppins-Bold.ttf', sz)
+                if probe.textlength(txt, font=f_) <= CAP_W: return f_
+            return f_
+        cap_fonts = [fit_cap(' '.join(expl[x][0] for x in c)) for c in chs]
         hook_text = ' '.join(sentences[:n_hook])
         hook_end = timing[n_hook - 1][1] + HOOK_HOLD * 0.8
         end_start = total - tail
         ff = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                                '-i', wav, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p',
                                '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', out], stdin=subprocess.PIPE)
-        top_lines = wrap(probe, hook_text, f_top, W - 200)
+        top_lines = wrap(probe, hook_text, f_top, 740)
         # Aussage passt immer aufs Bild: Schrift verkleinern, bis höchstens 4 Zeilen (satzweise umbrochen) und jedes Wort passt
-        hw = W - 340 if style == 'tusche' else W - 220
-        for size in range(104, 63, -6):
+        hw = HOOK_W - (20 if style == 'tusche' else 0)
+        for size in range(104, 51, -4):
             f_hook_fit = font('Lora.ttf', size, 'Bold') if style == 'tusche' else font('Poppins-Bold.ttf', size)
             hook_lines = [ln for s_ in sentences[:n_hook] for ln in wrap(probe, s_, f_hook_fit, hw)]   # Zeilenumbruch satzweise
             if len(hook_lines) <= 4 and all(probe.textlength(l, font=f_hook_fit) <= hw for l in hook_lines): break
@@ -327,18 +335,18 @@ def render(beitrag, style, out, voice):
                 if t < hook_end + 0.25:
                     a = ease((t - 0.05) / 0.35)
                     lines, lh = hook_lines, hook_lh; f_hook = f_hook_fit
-                    lh = hook_lh; y = H * 0.44 - len(lines) * lh / 2 + (1 - a) * 40
+                    lh = hook_lh; y = H * 0.42 - len(lines) * lh / 2 + (1 - a) * 40
                     fade = 1 if t < hook_end else max(0, 1 - (t - hook_end) / 0.25)
                     if style in ('himmel', 'cover'):
-                        card(img, (70, int(y - 70), W - 70, int(y + len(lines) * lh + 60)), alpha=0.88 * a * fade); d = ImageDraw.Draw(img)
+                        card(img, (int(CX - HOOK_W / 2 - 50), int(y - 70), int(CX + HOOK_W / 2 + 50), int(y + len(lines) * lh + 60)), alpha=0.88 * a * fade); d = ImageDraw.Draw(img)
                     if style == 'tusche':
-                        enso(img, W / 2, y + len(lines) * lh / 2 - 10, 470, ease((t - 0.05) / 1.2)); d = ImageDraw.Draw(img)
+                        enso(img, CX, y + len(lines) * lh / 2 - 10, 440, ease((t - 0.05) / 1.2)); d = ImageDraw.Draw(img)
                     col = mixc(P['ink'], P['dimbg'], a * fade)
                     for k, ln in enumerate(lines):
-                        tw = d.textlength(ln, font=f_hook); d.text(((W - tw) / 2, y + k * lh), ln, font=f_hook, fill=col)
+                        tw = d.textlength(ln, font=f_hook); d.text((CX - tw / 2, y + k * lh), ln, font=f_hook, fill=col)
                     if style == 'klar':
                         yb = y + len(lines) * lh + 60
-                        d.line((W / 2 - 70 * a, yb, W / 2 + 70 * a, yb), fill=RED, width=8)
+                        d.line((CX - 70 * a, yb, CX + 70 * a, yb), fill=RED, width=8)
                 else:
                     # Aussage bleibt klein oben stehen (Kontext für Späteinsteiger)
                     ta = ease((t - hook_end) / 0.5) * 0.75
@@ -348,12 +356,12 @@ def render(beitrag, style, out, voice):
                     ci = max([k for k, s0 in enumerate(ch_start) if s0 <= t + 0.04] or [0])
                     blk = chs[ci]; txt_words = [expl[x] for x in blk]
                     since = t - ch_start[ci]; pop = ease(since / 0.12) if since >= 0 else 0
-                    line = ' '.join(w_[0] for w_ in txt_words)
+                    line = ' '.join(w_[0] for w_ in txt_words); f_cap = cap_fonts[ci]
                     tw = d.textlength(line, font=f_cap)
                     y = H * 0.54 + (1 - pop) * 18
                     if style in ('himmel', 'cover'):
-                        card(img, (int((W - tw) / 2 - 50), int(y - 40), int((W + tw) / 2 + 50), int(y + 140)), alpha=0.86); d = ImageDraw.Draw(img)
-                    x = (W - tw) / 2
+                        card(img, (int(CX - tw / 2 - 44), int(y - 36), int(CX + tw / 2 + 44), int(y + f_cap.size * 1.3)), alpha=0.86); d = ImageDraw.Draw(img)
+                    x = CX - tw / 2
                     cur_k = max([k for k, w_ in enumerate(txt_words) if w_[1] <= t + 0.03] or [0])
                     for k, w_ in enumerate(txt_words):
                         spoken = w_[1] <= t + 0.03
