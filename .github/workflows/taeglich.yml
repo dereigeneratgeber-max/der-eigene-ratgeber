@@ -1,0 +1,112 @@
+name: Kanal täglich
+
+# Jeden Morgen: freigegebene Beiträge der nächsten 7 Tage rendern, öffentlich bereitstellen und in Buffer einplanen.
+on:
+  schedule:
+    - cron: "17 4 * * *"      # 06:17 Uhr Sommerzeit / 05:17 Uhr Winterzeit
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Höchstzahl neuer Beiträge in diesem Lauf"
+        default: "3"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kanal
+  cancel-in-progress: false
+
+jobs:
+  produzieren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    outputs:
+      ids: ${{ steps.ids.outputs.ids }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Werkzeuge
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+          mkdir -p fonts
+          B=https://raw.githubusercontent.com/google/fonts/main/ofl
+          curl -sSfL -o fonts/Poppins-Bold.ttf $B/poppins/Poppins-Bold.ttf
+          curl -sSfL -o fonts/Poppins-SemiBold.ttf $B/poppins/Poppins-SemiBold.ttf
+          curl -sSfL -o fonts/Poppins-Medium.ttf $B/poppins/Poppins-Medium.ttf
+          curl -sSfL -o fonts/Lora.ttf "$B/lora/Lora%5Bwght%5D.ttf"
+      - name: Bisherige Medien holen
+        run: |
+          mkdir -p site
+          if git ls-remote --exit-code origin medien >/dev/null; then
+            git fetch -q origin medien
+            git archive origin/medien | tar -x -C site
+          fi
+      - name: Planen
+        run: python kanal.py plan --tage 7 --max "${{ github.event.inputs.max || '3' }}"
+      - id: ids
+        run: echo "ids=$(cat faellig.json)" >> "$GITHUB_OUTPUT"
+      - name: Rendern
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: python kanal.py produzieren site
+      - name: Stand sichern
+        run: |
+          git config user.name "kanal-bot"
+          git config user.email "kanal-bot@users.noreply.github.com"
+          git add status.json
+          git diff --cached --quiet || (git commit -qm "Status: gerendert" && git push -q origin HEAD:main)
+      - name: Medien-Zweig aktualisieren
+        run: |
+          cp -r site /tmp/medien && cd /tmp/medien
+          git init -q -b medien
+          git config user.name "kanal-bot"
+          git config user.email "kanal-bot@users.noreply.github.com"
+          git add -A && git commit -qm "Medien"
+          git remote add origin "$(cd "$GITHUB_WORKSPACE" && git remote get-url origin)"
+          git -c http.extraheader="$(cd "$GITHUB_WORKSPACE" && git config --get http.https://github.com/.extraheader)" push -qf origin medien
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+
+  bereitstellen:
+    needs: produzieren
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    outputs:
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
+
+  veroeffentlichen:
+    needs: [produzieren, bereitstellen]
+    if: needs.produzieren.outputs.ids != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: In Buffer einplanen
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          KANAL_PAUSE: ${{ vars.KANAL_PAUSE }}
+          BUFFER_ENTWURF: ${{ vars.BUFFER_ENTWURF }}
+          IDS: ${{ needs.produzieren.outputs.ids }}
+        run: |
+          echo "$IDS" > faellig.json
+          sleep 30
+          python kanal.py veroeffentlichen "${{ needs.bereitstellen.outputs.url }}"
+      - name: Stand sichern
+        if: always()
+        run: |
+          git config user.name "kanal-bot"
+          git config user.email "kanal-bot@users.noreply.github.com"
+          git add status.json
+          git diff --cached --quiet || (git commit -qm "Status: in Buffer geplant" && git push -q origin HEAD:main)

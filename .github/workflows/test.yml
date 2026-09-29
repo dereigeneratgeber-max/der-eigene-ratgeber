@@ -1,0 +1,50 @@
+name: Test
+
+# Manuell starten: einen Beitrag rendern (Ergebnis als Download) oder die Buffer-Verbindung prüfen.
+on:
+  workflow_dispatch:
+    inputs:
+      aktion:
+        description: "rendern oder buffer-test"
+        default: "rendern"
+      beitrag:
+        description: "ID aus der Warteschlange, z. B. C01-T01-V"
+        default: "C01-T01-V"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Werkzeuge
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q -r requirements.txt
+          mkdir -p fonts
+          B=https://raw.githubusercontent.com/google/fonts/main/ofl
+          curl -sSfL -o fonts/Poppins-Bold.ttf $B/poppins/Poppins-Bold.ttf
+          curl -sSfL -o fonts/Poppins-SemiBold.ttf $B/poppins/Poppins-SemiBold.ttf
+          curl -sSfL -o fonts/Poppins-Medium.ttf $B/poppins/Poppins-Medium.ttf
+          curl -sSfL -o fonts/Lora.ttf "$B/lora/Lora%5Bwght%5D.ttf"
+      - name: Buffer prüfen
+        if: github.event.inputs.aktion == 'buffer-test'
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python kanal.py buffer-test
+      - name: Rendern
+        if: github.event.inputs.aktion == 'rendern'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: |
+          echo '["${{ github.event.inputs.beitrag }}"]' > faellig.json
+          python kanal.py produzieren ausgabe
+      - uses: actions/upload-artifact@v4
+        if: github.event.inputs.aktion == 'rendern'
+        with:
+          name: test
+          path: ausgabe/m/
+          retention-days: 7
