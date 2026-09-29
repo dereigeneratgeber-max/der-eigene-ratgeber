@@ -173,7 +173,7 @@ def cmd_veroeffentlichen(a):
             ziele += [('instagram', ig, asset, {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'firstComment': b['angepinnter_kommentar'], 'isAiGenerated': True}}),
                       ('tiktok', tt, asset, {'tiktok': {'isAiGenerated': True}}),
                       ('youtube', yt, asset, {'youtube': {'title': b['youtube_titel'][:100], 'privacy': 'public', 'madeForKids': False,
-                                                          'notifySubscribers': True, 'embeddable': True}})]
+                                                          'notifySubscribers': True, 'embeddable': True, 'isAiGenerated': True}})]
         else:
             asset = [{'image': {'url': u}} for u in urls[:10]]
             ziele += [('instagram', ig, asset, {'instagram': {'type': 'carousel', 'shouldShareToFeed': True, 'firstComment': b['angepinnter_kommentar'], 'isAiGenerated': False}})]
@@ -201,11 +201,23 @@ def cmd_buffer_test(a):
     org, ch = kanaele()
     print('Organisation:', org['name'], org['id'])
     for k, v in ch.items(): print(f'  Kanal {k}: {v["name"]} ({v["id"]})')
-    for typ in ('CreatePostInput', 'PostInputMetaData', 'InstagramPostMetadataInput', 'TiktokPostMetadataInput', 'YoutubePostMetadataInput', 'AssetInput'):
-        try:
-            t = buffer('query($n: String!) { __type(name: $n) { inputFields { name type { kind name ofType { kind name } } } } }', {'n': typ})['__type']
-            print(typ + ':', ', '.join(f['name'] for f in (t or {}).get('inputFields') or []))
-        except Exception as e: print(typ, 'nicht lesbar:', e)
+    def typ_name(t):
+        while t and t.get('name') is None: t = t.get('ofType')
+        return (t or {}).get('name')
+    q = 'query($n: String!) { __type(name: $n) { kind inputFields { name type { kind name ofType { kind name ofType { kind name } } } } enumValues { name } } }'
+    gesehen, offen = set(), ['CreatePostInput', 'PostInputMetaData', 'AssetInput']
+    while offen:
+        n = offen.pop(0)
+        if n in gesehen or n in ('String', 'Boolean', 'Int', 'Float', 'ID', 'DateTime'): continue
+        gesehen.add(n)
+        try: t = buffer(q, {'n': n})['__type']
+        except Exception as e: print(n, 'nicht lesbar:', e); continue
+        if not t: continue
+        if t.get('enumValues'): print(f'{n} (Auswahl): ' + ', '.join(v['name'] for v in t['enumValues'])); continue
+        felder = [(f['name'], typ_name(f['type'])) for f in t.get('inputFields') or []]
+        print(f'{n}: ' + ', '.join(f'{a}:{b}' for a, b in felder))
+        if n in ('CreatePostInput', 'PostInputMetaData', 'AssetInput') or n.lower().startswith(('instagram', 'tiktok', 'youtube', 'video', 'image')) or n in ('ShareMode', 'SchedulingType'):
+            offen += [b for a, b in felder if b]
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
