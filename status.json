@@ -1,5 +1,6 @@
 {
  "C01-T02-K": {
+  "buffer": {},
   "gerendert": "2026-09-30T06:32+02:00",
   "medien": [
    "C01-T02-K_01.jpg",
@@ -13,6 +14,12 @@
   ]
  },
  "C01-T02-V": {
+  "buffer": {
+   "instagram": "6abc91cdbc79f721889572fc",
+   "tiktok": "6abc91cd3b1eb12e6e4391f5",
+   "youtube": "6abc91ce5df9296bd8df8565"
+  },
+  "fertig": true,
   "gerendert": "2026-09-30T06:32+02:00",
   "medien": [
    "C01-T02-V.mp4"
