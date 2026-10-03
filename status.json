@@ -1,5 +1,11 @@
 {
  "C01-T01-V": {
+  "buffer": {
+   "instagram": "6ac086a6e22a2e5172b1d55b",
+   "tiktok": "6ac086a7713b7277a0aa889d",
+   "youtube": "6ac086a74619427d30df944c"
+  },
+  "fertig": true,
   "gerendert": "2026-10-03T06:32+02:00",
   "medien": [
    "C01-T01-V.mp4"
@@ -56,6 +62,7 @@
   ]
  },
  "C01-T05-K": {
+  "buffer": {},
   "gerendert": "2026-10-03T06:32+02:00",
   "medien": [
    "C01-T05-K_01.jpg",
