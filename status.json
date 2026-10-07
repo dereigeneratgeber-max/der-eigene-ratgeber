@@ -124,6 +124,7 @@
   ]
  },
  "C01-T09-K": {
+  "buffer": {},
   "gerendert": "2026-10-07T06:34+02:00",
   "medien": [
    "C01-T09-K_01.jpg",
@@ -137,6 +138,12 @@
   ]
  },
  "C01-T09-V": {
+  "buffer": {
+   "instagram": "6ac5ccc253551104161f8e5a",
+   "tiktok": "6ac5ccc2c22c37a573b77294",
+   "youtube": "6ac5ccc336c2a7788dcde80d"
+  },
+  "fertig": true,
   "gerendert": "2026-10-07T06:34+02:00",
   "medien": [
    "C01-T09-V.mp4"
