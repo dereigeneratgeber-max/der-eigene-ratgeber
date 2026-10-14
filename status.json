@@ -224,12 +224,24 @@
   ]
  },
  "C01-T15-V": {
+  "buffer": {
+   "instagram": "6acf0ad8b610c3011f9f776d",
+   "tiktok": "6acf0ad91f3f10bcb7b13b41",
+   "youtube": "6acf0ad9f847f2ad9ec25532"
+  },
+  "fertig": true,
   "gerendert": "2026-10-14T06:48+02:00",
   "medien": [
    "C01-T15-V.mp4"
   ]
  },
  "C01-T16-V": {
+  "buffer": {
+   "instagram": "6acf0ada0d20fd15277dd626",
+   "tiktok": "6acf0ada33507eb5b0eff56c",
+   "youtube": "6acf0adb848c31c8095d8056"
+  },
+  "fertig": true,
   "gerendert": "2026-10-14T06:48+02:00",
   "medien": [
    "C01-T16-V.mp4"
