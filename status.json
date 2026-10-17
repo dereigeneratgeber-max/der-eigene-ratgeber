@@ -272,6 +272,7 @@
   ]
  },
  "C01-T19-K": {
+  "buffer": {},
   "gerendert": "2026-10-17T06:45+02:00",
   "medien": [
    "C01-T19-K_01.jpg",
@@ -280,6 +281,12 @@
   ]
  },
  "C01-T19-V": {
+  "buffer": {
+   "instagram": "6ad2fe1e1c7e49ea4c397164",
+   "tiktok": "6ad2fe1e8ac6cfe5442e4741",
+   "youtube": "6ad2fe1ec34368e4b0a8debf"
+  },
+  "fertig": true,
   "gerendert": "2026-10-17T06:45+02:00",
   "medien": [
    "C01-T19-V.mp4"
