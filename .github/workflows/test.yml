@@ -1,15 +1,25 @@
 name: Test
 
-# Manuell starten: einen Beitrag rendern (Ergebnis als Download) oder die Buffer-Verbindung prüfen.
+# Manuell starten: einen Beitrag rendern (Ergebnis als Download), die Buffer-Verbindung prüfen
+# oder Hörproben aus proben/*.json rendern (aktion "probe", danach unter …/m/probe_*.mp4 abrufbar).
 on:
   workflow_dispatch:
     inputs:
       aktion:
-        description: "rendern oder buffer-test"
+        description: "rendern, buffer-test oder probe"
         default: "rendern"
       beitrag:
         description: "ID aus der Warteschlange, z. B. C01-T01-V"
         default: "C01-T01-V"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kanal
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -48,3 +58,37 @@ jobs:
           name: test
           path: ausgabe/m/
           retention-days: 7
+      - name: Hörproben rendern
+        if: github.event.inputs.aktion == 'probe'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: |
+          mkdir -p site/m
+          if git ls-remote --exit-code origin medien >/dev/null; then
+            git fetch -q origin medien
+            git archive origin/medien | tar -x -C site
+          fi
+          for f in proben/*.json; do
+            n=$(basename "$f" .json)
+            python render.py "$f" auto "site/m/$n.mp4" --stimme elevenlabs
+          done
+          cp -r site /tmp/medien && cd /tmp/medien
+          git init -q -b medien
+          git config user.name "kanal-bot"
+          git config user.email "kanal-bot@users.noreply.github.com"
+          git add -A && git commit -qm "Medien + Hörproben"
+          git remote add origin "$(cd "$GITHUB_WORKSPACE" && git remote get-url origin)"
+          git -c http.extraheader="$(cd "$GITHUB_WORKSPACE" && git config --get http.https://github.com/.extraheader)" push -qf origin medien
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event.inputs.aktion == 'probe'
+        with: { path: site }
+
+  bereitstellen:
+    needs: test
+    if: github.event.inputs.aktion == 'probe'
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
