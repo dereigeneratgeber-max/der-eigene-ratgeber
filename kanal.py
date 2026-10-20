@@ -167,36 +167,46 @@ def cmd_veroeffentlichen(a):
             try: urllib.request.urlopen(urllib.request.Request(u, method='HEAD'), timeout=30)
             except Exception as e: raise RuntimeError(f'Medium nicht erreichbar: {u} ({e})')
         ig, tt, yt = texte(b); due = b['_zeit'].astimezone(ZoneInfo('UTC')).strftime('%Y-%m-%dT%H:%M:%S.000Z')
-        ziele = []
+        ziele = []   # (dienst, text, assets, [Metadaten-Varianten, die nacheinander probiert werden])
         if b['format'] == 'video':
             asset = [{'video': {'url': urls[0], 'metadata': {'thumbnailOffset': 300}}}]
-            ziele += [('instagram', ig, asset, {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'isAiGenerated': True}}),
-                      ('tiktok', tt, asset, {'tiktok': {'isAiGenerated': True}}),
-                      ('youtube', yt, asset, {'youtube': {'title': b['youtube_titel'][:100], 'privacy': 'public', 'madeForKids': False,
-                                                          'notifySubscribers': True, 'embeddable': True, 'isAiGenerated': True, 'categoryId': '27'}})]
-        else:
-            asset = [{'image': {'url': u}} for u in urls[:10]]
-            ziele += [('instagram', ig, asset, {'instagram': {'type': 'carousel', 'shouldShareToFeed': True, 'isAiGenerated': False}})]
+            ziele += [('instagram', ig, asset, [{'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'isAiGenerated': True}}, None]),
+                      ('tiktok', tt, asset, [{'tiktok': {'isAiGenerated': True}}, None]),
+                      ('youtube', yt, asset, [{'youtube': {'title': b['youtube_titel'][:100], 'privacy': 'public', 'madeForKids': False,
+                                                           'notifySubscribers': True, 'embeddable': True, 'isAiGenerated': True, 'categoryId': '27'}}])]
+        else:   # Karussell: mehrere Schreibweisen nacheinander, bis Buffer annimmt
+            bilder = [{'image': {'url': u, 'thumbnailUrl': u}} for u in urls[:10]]
+            ziele += [('instagram', ig, bilder, [{'instagram': {'type': 'carousel', 'shouldShareToFeed': True}},
+                                                 {'instagram': {'type': 'post', 'shouldShareToFeed': True}},
+                                                 None])]
         st.setdefault('buffer', {})
-        for dienst, text, assets, meta in ziele:
+        for dienst, text, assets, varianten in ziele:
             if dienst not in ch: print(f'  {dienst}: nicht in Buffer verbunden – übersprungen'); continue
             if dienst in st['buffer']: continue
-            inp = {'channelId': ch[dienst]['id'], 'text': text, 'assets': assets, 'schedulingType': 'automatic',
-                   'mode': 'customScheduled', 'dueAt': due, 'metadata': meta, 'aiAssisted': True}
-            if entwurf: inp['saveToDraft'] = True
-            try:
-                r = buffer(MUT, {'input': inp})['createPost']
-            except RuntimeError as e:
-                if 'metadata' in str(e).lower() or 'field' in str(e).lower():
-                    print(f'  {dienst}: Metadaten abgelehnt, zweiter Versuch ohne Zusatzfelder:', str(e)[:300])
-                    inp.pop('metadata'); r = buffer(MUT, {'input': inp})['createPost']
-                else: raise
-            if 'post' in r: st['buffer'][dienst] = r['post']['id']; print(f'  {bid} → {dienst}: geplant für {due}')
-            else: fehler.append(f"{bid} {dienst}: {r.get('message')}")
+            meldungen, ok = [], False
+            for meta in varianten:
+                inp = {'channelId': ch[dienst]['id'], 'text': text, 'assets': assets, 'schedulingType': 'automatic',
+                       'mode': 'customScheduled', 'dueAt': due, 'aiAssisted': True}
+                if meta: inp['metadata'] = meta
+                if entwurf: inp['saveToDraft'] = True
+                try: r = buffer(MUT, {'input': inp})['createPost']
+                except RuntimeError as e: r = {'message': str(e)}
+                if 'post' in r:
+                    st['buffer'][dienst] = r['post']['id']; ok = True
+                    print(f'  {bid} → {dienst}: geplant für {due}' + (f' (Variante {varianten.index(meta) + 1})' if meldungen else ''))
+                    break
+                meldungen.append(f"Variante {varianten.index(meta) + 1}: {str(r.get('message'))[:400]}")
+                print(f'  {bid} {dienst}: abgelehnt –', meldungen[-1])
+            if ok: st.get('fehler', {}).pop(dienst, None)
+            else:
+                st.setdefault('fehler', {})[dienst] = {'zeit': datetime.now(ZoneInfo('Europe/Berlin')).isoformat(timespec='minutes'), 'meldungen': meldungen}
+                fehler.append((b['format'], f"{bid} {dienst}: " + ' | '.join(meldungen)))
+        if not st.get('fehler'): st.pop('fehler', None)
         if all(d in st['buffer'] for d, *_ in ziele if d in ch): st['fertig'] = True
         s[bid] = st; speichere_status(s)
-    if fehler:
-        print('FEHLER:\n' + '\n'.join(fehler)); sys.exit(1)
+    if fehler:   # Meldungen stehen auch in status.json unter „fehler“
+        print('FEHLER:\n' + '\n'.join(m for _, m in fehler))
+        if any(f == 'video' for f, _ in fehler): sys.exit(1)   # ein fehlendes Karussell soll die Videos nicht rot färben
 
 def cmd_buffer_test(a):
     org, ch = kanaele()
