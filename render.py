@@ -43,7 +43,7 @@ PROFILE = {
 TAG = re.compile(r'\[[^\]]*\]\s*')
 
 def stimmprofil(beitrag):
-    p = beitrag.get('stimme') or os.environ.get('ELEVENLABS_PROFIL') or 'alt'
+    p = beitrag.get('stimme') or os.environ.get('ELEVENLABS_PROFIL') or 'B'   # Standard seit 20.10.: B
     prof = dict(PROFILE.get(p, PROFILE['alt'])) if isinstance(p, str) else {**PROFILE['alt'], **p}
     if isinstance(p, str) and p == 'alt' and os.environ.get('ELEVENLABS_SPEED'): prof['speed'] = float(os.environ['ELEVENLABS_SPEED'])
     return prof
@@ -112,7 +112,11 @@ def build_audio(sentences, n_hook, voice, tmp, prof=None, sprechtext=None):
     if voice == 'elevenlabs':
         txt = ' '.join((sprechtext or ' '.join(sentences)).split())
         if not prof['model'].startswith('eleven_v3'): txt = TAG.sub('', txt)   # nur v3 versteht Audio-Tags
-        mp3, al = _el_request(txt, prof)
+        try: mp3, al = _el_request(txt, prof)
+        except RuntimeError as e:
+            if not prof['model'].startswith('eleven_v3'): raise
+            print('eleven_v3 nicht verfügbar, Rückfall auf Profil A:', str(e)[:300])
+            mp3, al = _el_request(TAG.sub('', txt), PROFILE['A'])
         open(os.path.join(tmp, 'v.mp3'), 'wb').write(mp3)
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', os.path.join(tmp, 'v.mp3'), '-ac', '1', '-ar', '44100', os.path.join(tmp, 'v.wav')], check=True)
         a, sr = read_wav(os.path.join(tmp, 'v.wav'))
