@@ -272,7 +272,10 @@
   ]
  },
  "C01-T19-K": {
-  "buffer": {},
+  "buffer": {
+   "instagram": "6ad78ea12a3b888f3d9b1168"
+  },
+  "fertig": true,
   "gerendert": "2026-10-17T06:45+02:00",
   "medien": [
    "C01-T19-K_01.jpg",
