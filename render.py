@@ -25,7 +25,7 @@ END_CARD = 2.4        # Schlusstafel mit Buch (nur bei Buchhinweis)
 
 # ---------- Text und Stimme ----------
 def saetze(text):
-    parts = re.split(r'(?<=[.!?])\s+(?=[A-ZÄÖÜ„"])', text.strip())
+    parts = re.split(r'(?<=[.!?…])\s+(?=[A-ZÄÖÜ„"])', text.strip())
     return [p.strip() for p in parts if p.strip()]
 
 def tts(text, voice, out, length_scale=1.12):
@@ -34,23 +34,49 @@ def tts(text, voice, out, length_scale=1.12):
                        input=text.encode(), capture_output=True)
     if p.returncode: raise RuntimeError(p.stderr.decode()[-500:])
 
-def _el_request(text):
+# Stimmprofile: 'alt' = bisherige Fassung, 'A' = lebendiger (v2), 'B' = eleven_v3 mit Audio-Tags wie [thoughtful]
+PROFILE = {
+    'alt': {'model': 'eleven_multilingual_v2', 'stability': 0.55, 'similarity': 0.8, 'style': 0.15, 'speed': 1.1, 'hook_hold': 0.45},
+    'A':   {'model': 'eleven_multilingual_v2', 'stability': 0.35, 'similarity': 0.8, 'style': 0.35, 'speed': 1.05, 'hook_hold': 0.0},
+    'B':   {'model': 'eleven_v3', 'stability': 0.5, 'similarity': 0.8, 'hook_hold': 0.0},
+}
+TAG = re.compile(r'\[[^\]]*\]\s*')
+
+def stimmprofil(beitrag):
+    p = beitrag.get('stimme') or os.environ.get('ELEVENLABS_PROFIL') or 'alt'
+    prof = dict(PROFILE.get(p, PROFILE['alt'])) if isinstance(p, str) else {**PROFILE['alt'], **p}
+    if isinstance(p, str) and p == 'alt' and os.environ.get('ELEVENLABS_SPEED'): prof['speed'] = float(os.environ['ELEVENLABS_SPEED'])
+    return prof
+
+def _el_request(text, prof):
     import base64, urllib.request, urllib.error
     key = os.environ['ELEVENLABS_API_KEY'].strip(); voice = os.environ['ELEVENLABS_VOICE_ID'].strip()
-    body = json.dumps({'text': text, 'model_id': os.environ.get('ELEVENLABS_MODEL', 'eleven_multilingual_v2'),
-                       'voice_settings': {'stability': 0.55, 'similarity_boost': 0.8, 'style': 0.15, 'speed': float(os.environ.get('ELEVENLABS_SPEED', '1.1'))}}).encode()
-    req = urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128',
-                                 data=body, headers={'xi-api-key': key, 'Content-Type': 'application/json'})
+    vs = {'stability': prof['stability'], 'similarity_boost': prof['similarity'], 'use_speaker_boost': True}
+    if prof.get('style') is not None: vs['style'] = prof['style']
+    if prof.get('speed') is not None: vs['speed'] = prof['speed']
+    body = json.dumps({'text': text, 'model_id': prof['model'], 'voice_settings': vs}).encode()
+    def call(pfad):
+        req = urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{voice}{pfad}?output_format=mp3_44100_128',
+                                     data=body, headers={'xi-api-key': key, 'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=240) as r: return r.read()
     try:
-        with urllib.request.urlopen(req, timeout=180) as r:
-            res = json.loads(r.read())
+        res = json.loads(call('/with-timestamps'))
+        return base64.b64decode(res['audio_base64']), (res.get('alignment') or res.get('normalized_alignment'))
+    except urllib.error.HTTPError as e:
+        msg = e.read().decode(errors='replace')[:600]
+        if not prof['model'].startswith('eleven_v3'): raise RuntimeError(f'ElevenLabs-Fehler {e.code}: {msg}')
+        print('Zeitstempel nicht verfügbar, Rückfall ohne Zeitstempel:', e.code, msg[:200])
+    try: return call(''), None
     except urllib.error.HTTPError as e:
         raise RuntimeError(f'ElevenLabs-Fehler {e.code}: {e.read().decode(errors="replace")[:600]}')
-    return base64.b64decode(res['audio_base64']), (res.get('alignment') or res.get('normalized_alignment'))
 
 def _words_from_alignment(al):
-    words, cur, t0, t1 = [], '', None, None
+    words, cur, t0, t1, tag = [], '', None, None, False
     for ch, a, b in zip(al['characters'], al['character_start_times_seconds'], al['character_end_times_seconds']):
+        if ch == '[': tag = True; continue
+        if tag:
+            if ch == ']': tag = False
+            continue
         if ch.isspace():
             if cur: words.append((cur, t0, t1)); cur = ''
         else:
@@ -64,17 +90,33 @@ def read_wav(f):
         sr = w.getframerate(); a = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
     return a, sr
 
-def build_audio(sentences, n_hook, voice, tmp):
+def nur_satzzeichen(w_): return not re.search(r'\w', w_)
+
+def anzeige_woerter(words):
+    out = []
+    for w_ in words:
+        if nur_satzzeichen(w_[0]):
+            if '…' in w_[0] and out and out[-1][3] == w_[3]: out[-1] = (out[-1][0] + '…',) + out[-1][1:]
+            continue
+        out.append(w_)
+    return out
+
+def anzeige_satz(s_): return ' '.join(w_[0] for w_ in anzeige_woerter([(w_, 0, 0, 0) for w_ in s_.split()]))
+
+def build_audio(sentences, n_hook, voice, tmp, prof=None, sprechtext=None):
     """Sprechtext -> (Tonspur, sr, Wortliste [(wort, start, ende, satzindex)], Satz-Zeiten, Dauer).
     ElevenLabs: EIN Aufruf für den ganzen Text (natürliche Betonung, wenige Anfragen). Nach der Aussage wird eine Pause eingefügt."""
+    prof = prof or PROFILE['alt']
     toks = [(w_, i) for i, s in enumerate(sentences) for w_ in s.split()]
     words = []
     if voice == 'elevenlabs':
-        mp3, al = _el_request(' '.join(sentences))
+        txt = ' '.join((sprechtext or ' '.join(sentences)).split())
+        if not prof['model'].startswith('eleven_v3'): txt = TAG.sub('', txt)   # nur v3 versteht Audio-Tags
+        mp3, al = _el_request(txt, prof)
         open(os.path.join(tmp, 'v.mp3'), 'wb').write(mp3)
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', os.path.join(tmp, 'v.mp3'), '-ac', '1', '-ar', '44100', os.path.join(tmp, 'v.wav')], check=True)
         a, sr = read_wav(os.path.join(tmp, 'v.wav'))
-        wl = _words_from_alignment(al)
+        wl = _words_from_alignment(al) if al else []
         if len(wl) != len(toks):   # Sicherheitsnetz: proportional verteilen
             d = len(a) / sr; tot = sum(len(w_) + 1 for w_, _ in toks); t = 0
             wl = []
@@ -91,10 +133,11 @@ def build_audio(sentences, n_hook, voice, tmp):
                 dt = d * (len(w_) + 1) / tot; words.append((w_, tt, tt + dt, i)); tt += dt
             parts += [x, np.zeros(int(0.28 * sr))]; t += d + 0.28
         a = np.concatenate(parts)
-    # Pause nach der Aussage einfügen
+    words = anzeige_woerter(words)   # „…“ an das Wort davor hängen, einzelne „–“ nicht als Untertitel zeigen
+    # Pause nach der Aussage einfügen (nur im Profil 'alt'; sonst entsteht die Pause beim Sprechen)
     lead = 0.15
     hook_last = max(k for k, w_ in enumerate(words) if w_[3] < n_hook)
-    if hook_last + 1 < len(words):
+    if HOOK_HOLD > 0 and hook_last + 1 < len(words):
         cut = (words[hook_last][2] + words[hook_last + 1][1]) / 2
         ci = int(cut * sr)
         a = np.concatenate([a[:ci], np.zeros(int(HOOK_HOLD * sr)), a[ci:]])
@@ -279,13 +322,17 @@ def chunks_of(words, d, f, maxw):
     return out
 
 def render(beitrag, style, out, voice):
-    sentences = saetze(beitrag['sprechtext'])
+    global HOOK_HOLD
+    prof = stimmprofil(beitrag); HOOK_HOLD = prof.get('hook_hold', 0.45)
+    print('Stimmprofil:', prof)
+    sentences = saetze(TAG.sub('', beitrag['sprechtext']))
     n_hook = hook_satzzahl(sentences, beitrag.get('hook', sentences[0]))
     nr = beitrag.get('serie_nummer')
     serie = beitrag['serie'].upper() + (f' #{nr}' if nr else '')
     with_end = bool(beitrag.get('buchhinweis'))
     with tempfile.TemporaryDirectory() as tmp:
-        vt, sr, words, timing = build_audio(sentences, n_hook, voice, tmp)
+        vt, sr, words, timing = build_audio(sentences, n_hook, voice, tmp, prof, beitrag['sprechtext'])
+        sentences = [anzeige_satz(s_) for s_ in sentences]
         tail = END_CARD if with_end else 0.5
         total = len(vt) / sr + tail
         vt = np.pad(vt, (0, int(total * sr) - len(vt)))
@@ -311,7 +358,7 @@ def render(beitrag, style, out, voice):
             return f_
         cap_fonts = [fit_cap(' '.join(expl[x][0] for x in c)) for c in chs]
         hook_text = ' '.join(sentences[:n_hook])
-        hook_end = timing[n_hook - 1][1] + HOOK_HOLD * 0.8
+        hook_end = timing[n_hook - 1][1] + max(HOOK_HOLD, 0.3) * 0.8
         end_start = total - tail
         ff = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                                '-i', wav, '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p',
