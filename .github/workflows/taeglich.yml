@@ -1,6 +1,6 @@
 name: Kanal täglich
 
-# Jeden Morgen: freigegebene Beiträge der nächsten 7 Tage rendern, öffentlich bereitstellen und in Buffer einplanen.
+# Jeden Morgen: freigegebene Beiträge der nächsten 6 Tage (Buffer: max. 10 geplante je Kanal) rendern, öffentlich bereitstellen und in Buffer einplanen.
 on:
   schedule:
     - cron: "17 4 * * *"      # 06:17 Uhr Sommerzeit / 05:17 Uhr Winterzeit
@@ -48,7 +48,7 @@ jobs:
             git archive origin/medien | tar -x -C site
           fi
       - name: Planen
-        run: python kanal.py plan --tage 7 --max "${{ github.event.inputs.max || '3' }}"
+        run: python kanal.py plan --tage 6 --max "${{ github.event.inputs.max || '3' }}"
       - id: ids
         run: echo "ids=$(cat faellig.json)" >> "$GITHUB_OUTPUT"
       - name: Rendern
