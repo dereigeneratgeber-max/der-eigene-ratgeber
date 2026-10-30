@@ -143,11 +143,19 @@ MUT = '''mutation($input: CreatePostInput!) { createPost(input: $input) {
   ... on PostActionSuccess { post { id dueAt } }
   ... on MutationError { message } } }'''
 
+BUCH_URL = 'https://buchshop.bod.de/der-eigene-ratgeber-fabian-schapperth-9783696706524'
+LINKTREE = 'https://linktr.ee/derEIGENERatgeber'
+ALLE = ('tiktok', 'instagram', 'youtube')
+
 def texte(b):
     ht = lambda l: ' '.join(l)
-    ig = f"{b['instagram_caption']}\n\n{ht(b['instagram_hashtags'])}"
-    tt = f"{b['tiktok_text']} {ht(b['tiktok_hashtags'])}"
-    yt = f"{b['youtube_beschreibung']}\n\n{b['angepinnter_kommentar']}\n\n{ht(b['tiktok_hashtags'])} #shorts\nSprecherstimme KI-generiert."
+    ig = b['instagram_caption']
+    if b.get('buchhinweis'): ig += '\n\nDas Buch „Der eigene Ratgeber“: Link in der Bio.'
+    ig += f"\n\n{ht(b['instagram_hashtags'])}"
+    tt = b['tiktok_text'] + (' Mehr im Buch „Der eigene Ratgeber“.' if b.get('buchhinweis') else '') + f" {ht(b['tiktok_hashtags'])}"
+    yt = (f"{b['youtube_beschreibung']}\n\n{b['angepinnter_kommentar']}\n\n"
+          f"Das Buch „Der eigene Ratgeber“: {BUCH_URL}\nAlle Links: {LINKTREE}\n\n"
+          f"{ht(b['tiktok_hashtags'])} #shorts\nSprecherstimme KI-generiert.")
     if b.get('quelle'): yt += f"\nQuelle: {b['quelle']}"
     return ig, tt, yt
 
@@ -182,6 +190,7 @@ def cmd_veroeffentlichen(a):
         st.setdefault('buffer', {})
         for dienst, text, assets, varianten in ziele:
             if dienst not in ch: print(f'  {dienst}: nicht in Buffer verbunden – übersprungen'); continue
+            if dienst not in b.get('plattformen', ALLE): continue   # Beitrag ist nicht für diese Plattform gedacht
             if dienst in st['buffer']: continue
             meldungen, ok = [], False
             for meta in varianten:
@@ -202,7 +211,7 @@ def cmd_veroeffentlichen(a):
                 st.setdefault('fehler', {})[dienst] = {'zeit': datetime.now(ZoneInfo('Europe/Berlin')).isoformat(timespec='minutes'), 'meldungen': meldungen}
                 fehler.append((b['format'], f"{bid} {dienst}: " + ' | '.join(meldungen)))
         if not st.get('fehler'): st.pop('fehler', None)
-        if all(d in st['buffer'] for d, *_ in ziele if d in ch): st['fertig'] = True
+        if all(d in st['buffer'] for d, *_ in ziele if d in ch and d in b.get('plattformen', ALLE)): st['fertig'] = True
         s[bid] = st; speichere_status(s)
     if fehler:   # Meldungen stehen auch in status.json unter „fehler“
         print('FEHLER:\n' + '\n'.join(m for _, m in fehler))
