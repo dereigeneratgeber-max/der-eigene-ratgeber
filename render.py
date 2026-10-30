@@ -127,6 +127,11 @@ def build_audio(sentences, n_hook, voice, tmp, prof=None, sprechtext=None):
             for w_, _ in toks:
                 dt = d * (len(w_) + 1) / tot; wl.append((w_, t, t + dt)); t += dt
         words = [(toks[k][0], wl[k][1], wl[k][2], toks[k][1]) for k in range(len(toks))]
+    elif voice == 'stumm':   # Test ohne Stimme: Stille, Wörter gleichmäßig verteilt (2,6 Wörter/s)
+        sr, t = 44100, 0.0
+        for w_, i in toks:
+            dt = 0.18 + 0.045 * len(w_); words.append((w_, t, t + dt, i)); t += dt
+        a = np.zeros(int((t + 0.3) * sr), np.float32)
     else:   # Piper, Satz für Satz (kostenloser Rückfall)
         parts, t, sr = [], 0.0, None
         for i, s in enumerate(sentences):
@@ -288,6 +293,21 @@ def buchcover():
     c = Image.open(os.path.join(BASE, 'cover-1.png')).convert('RGB')
     return c.crop((c.width // 2, 0, c.width, c.height))
 
+def cap_v(f):
+    """Sichtbare Oberkante (Großbuchstaben) und Grundlinie relativ zum Zeichenpunkt – für echte Mittigkeit in Kästen."""
+    b = f.getbbox('H'); return b[1], b[3]
+
+def card_um(img, f, y_first, n_lines, lh, x0, x1, pad=56, alpha=0.9):
+    """Kasten, der den sichtbaren Text oben und unten gleich weit umschließt (behebt „Text sitzt zu tief“)."""
+    top, base = cap_v(f)
+    y0 = y_first + top - pad; y1 = y_first + (n_lines - 1) * lh + base + pad + int(f.size * 0.06)
+    card(img, (int(x0), int(y0), int(x1), int(y1)), alpha=alpha)
+
+def serien_pille(d, serie, f, P, x=90, y=246):
+    tw = d.textlength(serie, font=f); top, base = cap_v(f)
+    d.rounded_rectangle((x - 22, y + top - 16, x + tw + 22, y + base + 16), 30, fill=P['acc'])
+    d.text((x, y), serie, font=f, fill=(255, 255, 255) if P['acc'] != GOLD else NIGHT)
+
 def card(img, box, alpha=0.9, radius=36):
     ov = Image.new('RGBA', img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
     x0, y0, x1, y1 = box
@@ -306,8 +326,12 @@ def hook_satzzahl(sentences, hook):
         if len(acc) >= len(h): return i + 1
     return 1
 
+SCHWACH = set('der die das den dem des ein eine einen einem einer am im an in zu zum zur von vom mit auf für bei nach aus und oder aber nicht kein keine du ich er sie es wir ihr dein deine mein meine sein seine ist bist sind war hat hast habe wird wirst'.split())
+CAP_MAX_W = 7          # Untertitel: bis zu 7 Wörter gleichzeitig, auf höchstens 2 Zeilen (seit Charge 2)
+
 def chunks_of(words, d, f, maxw):
-    """Untertitel-Blöcke von 1-4 Wörtern, die immer in maxw passen: bricht nach 3 Wörtern oder an Satzzeichen."""
+    """Untertitel-Blöcke (Satzstücke) von bis zu CAP_MAX_W Wörtern auf höchstens 2 Zeilen.
+    Bricht am Satzende, an Satzzeichen ab 4 Wörtern, sonst nach CAP_MAX_W Wörtern."""
     out = []
     by_sent = {}
     for k, w_ in enumerate(words): by_sent.setdefault(w_[3], []).append(k)
@@ -315,12 +339,13 @@ def chunks_of(words, d, f, maxw):
     for si in sorted(by_sent):
         cur, blocks = [], []
         for k in by_sent[si]:
-            if cur and (len(cur) >= 3 or wid(cur + [k]) > maxw or (words[cur[-1]][0].endswith(PUNCT) and len(cur) >= 2)):
+            schwach = cur and words[cur[-1]][0].lower() in SCHWACH and len(cur) < CAP_MAX_W + 2 and wid(cur + [k]) <= 2 * maxw * 0.92
+            if cur and not schwach and (len(cur) >= CAP_MAX_W or wid(cur + [k]) > 2 * maxw * 0.92 or (words[cur[-1]][0].endswith(PUNCT) and len(cur) >= 4)):
                 blocks.append(cur); cur = []
             cur.append(k)
         if cur: blocks.append(cur)
         # einzelnes Wort am Satzende an den vorigen Block hängen, wenn es passt
-        if len(blocks) >= 2 and len(blocks[-1]) == 1 and len(blocks[-2]) < 4 and wid(blocks[-2] + blocks[-1]) <= maxw:
+        if len(blocks) >= 2 and len(blocks[-1]) <= 2 and len(blocks[-2]) + len(blocks[-1]) <= CAP_MAX_W + 1 and wid(blocks[-2] + blocks[-1]) <= 2 * maxw * 0.92:
             blocks[-2] += blocks.pop()
         out += blocks
     return out
@@ -345,22 +370,30 @@ def render(beitrag, style, out, voice):
         bg = Background(style)
         P = PAL[style]
         f_hook = font('Lora.ttf', 104, 'Bold') if style == 'tusche' else font('Poppins-Bold.ttf', 104)
-        f_cap = font('Poppins-Bold.ttf', 84)
+        f_cap = font('Poppins-Bold.ttf', 76)
         f_top = font('Lora.ttf', 44, 'Medium') if style == 'tusche' else font('Poppins-SemiBold.ttf', 42)
         f_lab = font('Poppins-Medium.ttf', 34); f_end = font('Poppins-Bold.ttf', 76); f_end2 = font('Lora.ttf', 44, 'Regular')
         cover = buchcover(); cover.thumbnail((620, 870), Image.LANCZOS)
+        cov_s = buchcover(); cov_s.thumbnail((240, 330), Image.LANCZOS)
         n = int(total * FPS)
         probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
         cap_w = CAP_W
         expl = [w_ for w_ in words if w_[3] >= n_hook]
         chs = chunks_of(expl, probe, f_cap, cap_w)
         ch_start = [expl[c[0]][1] for c in chs]
-        def fit_cap(txt):   # Schrift je Block verkleinern, bis er in den sicheren Bereich passt
-            for sz in range(84, 47, -4):
-                f_ = font('Poppins-Bold.ttf', sz)
-                if probe.textlength(txt, font=f_) <= CAP_W: return f_
-            return f_
-        cap_fonts = [fit_cap(' '.join(expl[x][0] for x in c)) for c in chs]
+        def zeilen_von(c, f_):   # Block in Zeilen (Listen von Wortindizes) umbrechen
+            lines, cur = [], []
+            for x in c:
+                if cur and probe.textlength(' '.join(expl[q][0] for q in cur + [x]), font=f_) > CAP_W: lines.append(cur); cur = []
+                cur.append(x)
+            if cur: lines.append(cur)
+            return lines
+        def fit_cap(c):   # Schrift je Block verkleinern, bis er auf höchstens 2 Zeilen in den sicheren Bereich passt
+            for sz in range(76, 47, -4):
+                f_ = font('Poppins-Bold.ttf', sz); ls_ = zeilen_von(c, f_)
+                if len(ls_) <= 2 and all(probe.textlength(' '.join(expl[q][0] for q in l), font=f_) <= CAP_W for l in ls_): return f_, ls_
+            return f_, ls_
+        cap_fit = [fit_cap(c) for c in chs]
         hook_text = ' '.join(sentences[:n_hook])
         hook_end = timing[n_hook - 1][1] + max(HOOK_HOLD, 0.3) * 0.8
         end_start = total - tail
@@ -380,23 +413,28 @@ def render(beitrag, style, out, voice):
             img = bg.frame(t).convert('RGBA'); d = ImageDraw.Draw(img)
             if not (with_end and t >= end_start):
                 # Serienlabel (unterhalb der Plattform-Leiste)
-                d.text((90, 250), serie, font=f_lab, fill=P['label'])
-                d.line((90, 302, 180, 302), fill=P['acc'], width=6)
+                serien_pille(d, serie, f_lab, P)
                 nm = 'Der eigene Ratgeber'; d.text((W - 90 - d.textlength(nm, font=f_lab), 250), nm, font=f_lab, fill=P['name'])
                 if t < hook_end + 0.25:
-                    a = ease((t - 0.05) / 0.35)
+                    a = 1.0   # Startbild: Aussage steht ab dem ersten Bild vollständig (auch Vorschaubild)
                     lines, lh = hook_lines, hook_lh; f_hook = f_hook_fit
-                    lh = hook_lh; y = H * 0.42 - len(lines) * lh / 2 + (1 - a) * 40
+                    top_, base_ = cap_v(f_hook)
+                    y = H * 0.40 - ((len(lines) - 1) * lh + base_ + top_) / 2
                     fade = 1 if t < hook_end else max(0, 1 - (t - hook_end) / 0.25)
                     if style in ('himmel', 'cover'):
-                        card(img, (int(CX - HOOK_W / 2 - 50), int(y - 70), int(CX + HOOK_W / 2 + 50), int(y + len(lines) * lh + 60)), alpha=0.88 * a * fade); d = ImageDraw.Draw(img)
+                        card_um(img, f_hook, y, len(lines), lh, CX - HOOK_W / 2 - 50, CX + HOOK_W / 2 + 50, pad=72, alpha=0.88 * fade); d = ImageDraw.Draw(img)
+                    # kleines Buchcover unter der Aussage (Wiedererkennung im Vorschaubild)
+                    yb_ = y + (len(lines) - 1) * lh + base_ + 150
+                    if fade > 0 and yb_ + cov_s.height < 1500:
+                        cv = cov_s.convert('RGBA'); cv.putalpha(int(255 * fade))
+                        img.alpha_composite(cv, (int(CX - cov_s.width / 2), int(yb_))); d = ImageDraw.Draw(img)
                     if style == 'tusche':
-                        enso(img, CX, y + len(lines) * lh / 2 - 10, 440, ease((t - 0.05) / 1.2)); d = ImageDraw.Draw(img)
+                        enso(img, CX, y + ((len(lines) - 1) * lh + base_ + top_) / 2, 440, 1.0); d = ImageDraw.Draw(img)
                     col = mixc(P['ink'], P['dimbg'], a * fade)
                     for k, ln in enumerate(lines):
                         tw = d.textlength(ln, font=f_hook); d.text((CX - tw / 2, y + k * lh), ln, font=f_hook, fill=col)
                     if style == 'klar':
-                        yb = y + len(lines) * lh + 60
+                        yb = y + (len(lines) - 1) * lh + base_ + 50
                         d.line((CX - 70 * a, yb, CX + 70 * a, yb), fill=RED, width=8)
                 else:
                     # Aussage bleibt klein oben stehen (Kontext für Späteinsteiger)
@@ -405,21 +443,21 @@ def render(beitrag, style, out, voice):
                         d.text((90, 350 + k * 58), ln, font=f_top, fill=mixc(P['ink'], P['dimbg'], ta))
                     # aktueller Untertitel-Block
                     ci = max([k for k, s0 in enumerate(ch_start) if s0 <= t + 0.04] or [0])
-                    blk = chs[ci]; txt_words = [expl[x] for x in blk]
+                    blk = chs[ci]; f_cap, cap_lines = cap_fit[ci]
                     since = t - ch_start[ci]; pop = ease(since / 0.12) if since >= 0 else 0
-                    line = ' '.join(w_[0] for w_ in txt_words); f_cap = cap_fonts[ci]
-                    tw = d.textlength(line, font=f_cap)
-                    y = H * 0.54 + (1 - pop) * 18
+                    clh = int(f_cap.size * 1.22); top_, base_ = cap_v(f_cap)
+                    widths = [d.textlength(' '.join(expl[q][0] for q in l), font=f_cap) for l in cap_lines]
+                    y = H * 0.56 - ((len(cap_lines) - 1) * clh + base_ + top_) / 2 + (1 - pop) * 14
                     if style in ('himmel', 'cover'):
-                        card(img, (int(CX - tw / 2 - 44), int(y - 36), int(CX + tw / 2 + 44), int(y + f_cap.size * 1.3)), alpha=0.86); d = ImageDraw.Draw(img)
-                    x = CX - tw / 2
-                    cur_k = max([k for k, w_ in enumerate(txt_words) if w_[1] <= t + 0.03] or [0])
-                    for k, w_ in enumerate(txt_words):
-                        spoken = w_[1] <= t + 0.03
-                        current = k == cur_k
-                        colr = P['acc'] if current else (P['ink'] if spoken else mixc(P['ink'], P['dimbg'], 0.45))
-                        d.text((x, y), w_[0], font=f_cap, fill=mixc(colr, P['dimbg'], pop))
-                        x += d.textlength(w_[0] + ' ', font=f_cap)
+                        card_um(img, f_cap, y, len(cap_lines), clh, CX - max(widths) / 2 - 44, CX + max(widths) / 2 + 44, pad=40, alpha=0.86); d = ImageDraw.Draw(img)
+                    cur_q = max([q for q in blk if expl[q][1] <= t + 0.03] or [blk[0]])
+                    for li, l in enumerate(cap_lines):
+                        x = CX - widths[li] / 2
+                        for q in l:
+                            w_ = expl[q]; spoken = w_[1] <= t + 0.03
+                            colr = P['acc'] if q == cur_q else (P['ink'] if spoken else mixc(P['ink'], P['dimbg'], 0.45))
+                            d.text((x, y + li * clh), w_[0], font=f_cap, fill=mixc(colr, P['dimbg'], pop))
+                            x += d.textlength(w_[0] + ' ', font=f_cap)
             else:
                 a = ease((t - end_start) / 0.5)
                 ov = Image.new('RGBA', img.size, P['endbg'] + (int(235 * a),)); img.alpha_composite(ov); d = ImageDraw.Draw(img)
@@ -434,10 +472,10 @@ def render(beitrag, style, out, voice):
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); ap.add_argument('json'); ap.add_argument('stil'); ap.add_argument('out')
-    ap.add_argument('--stimme', default='elevenlabs', help="'elevenlabs' oder Name einer Piper-Stimme (Rückfall)"); ap.add_argument('--index', type=int, default=0)
+    ap.add_argument('--stimme', default='elevenlabs', help="'elevenlabs', 'stumm' (Test ohne Ton) oder Name einer Piper-Stimme (Rückfall)"); ap.add_argument('--index', type=int, default=0)
     a = ap.parse_args()
     b = json.load(open(a.json)); b = b[a.index] if isinstance(b, list) else b
     stil = b.get('stil', 'himmel') if a.stil == 'auto' else a.stil
-    voice = 'elevenlabs' if a.stimme == 'elevenlabs' else (a.stimme if a.stimme.endswith('.onnx') else os.path.join(BASE, 'voices', a.stimme + '.onnx'))
+    voice = a.stimme if a.stimme in ('elevenlabs', 'stumm') else (a.stimme if a.stimme.endswith('.onnx') else os.path.join(BASE, 'voices', a.stimme + '.onnx'))
     d = render(b, stil, a.out, voice)
     print(f'{a.out}: {d:.1f} s')
