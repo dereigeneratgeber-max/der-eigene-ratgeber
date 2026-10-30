@@ -50,9 +50,10 @@ def slides(beitrag, style, outdir):
             f = f_quote if is_quote else f_big
             lh = 96 if is_quote else 108
             lines = R.wrap(d, txt, f, CW - (330 if style == 'tusche' else 220))
-            y = CH * 0.46 - len(lines) * lh / 2
+            top_, base_ = R.cap_v(f)
+            y = CH * 0.46 - ((len(lines) - 1) * lh + base_ + top_) / 2
             if style == 'himmel':
-                R.card(img, (60, int(y - 70), CW - 60, int(y + len(lines) * lh + 60))); d = ImageDraw.Draw(img)
+                R.card_um(img, f, y, len(lines), lh, 60, CW - 60, pad=70); d = ImageDraw.Draw(img)
             if style == 'tusche':
                 R.enso(img, CW / 2, y + len(lines) * lh / 2 - 8, 440, 1.0); d = ImageDraw.Draw(img)
             draw_lines(d, lines, f, 0, y, lh, P['ink'], center=True)
@@ -83,10 +84,12 @@ def slides(beitrag, style, outdir):
             f = f_small if small else f_body
             lh = 44 if small else 74
             lines = R.wrap(d, body, f, CW - 200)
-            block = len(lines) * lh + (70 if kick else 0)
-            y = CH * 0.47 - block / 2
+            top_, base_ = R.cap_v(f)
+            k_h = 70 if kick else 0
+            block = k_h + (len(lines) - 1) * lh + base_ - top_
+            y = CH * 0.47 - block / 2 - top_   # sichtbarer Block genau mittig
             if style == 'himmel':
-                R.card(img, (60, int(y - 60), CW - 60, int(y + block + 50))); d = ImageDraw.Draw(img)
+                R.card(img, (60, int(y + top_ - 60), CW - 60, int(y + top_ + block + 60))); d = ImageDraw.Draw(img)
             if kick:
                 d.text((100, y), kick.upper(), font=f_kick, fill=P['acc']); y += 70
             draw_lines(d, lines, f, 100, y, lh, P['ink'])
