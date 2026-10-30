@@ -25,7 +25,7 @@ END_CARD = 2.4        # Schlusstafel mit Buch (nur bei Buchhinweis)
 
 # ---------- Text und Stimme ----------
 def saetze(text):
-    parts = re.split(r'(?<=[.!?…])\s+(?=[A-ZÄÖÜ„"])', text.strip())
+    parts = re.split(r'(?<=[.!?…“])\s+(?=[A-ZÄÖÜ„"])', text.strip())   # auch nach Zitat-Ende „…“
     return [p.strip() for p in parts if p.strip()]
 
 def tts(text, voice, out, length_scale=1.12):
@@ -297,10 +297,10 @@ def cap_v(f):
     """Sichtbare Oberkante (Großbuchstaben) und Grundlinie relativ zum Zeichenpunkt – für echte Mittigkeit in Kästen."""
     b = f.getbbox('H'); return b[1], b[3]
 
-def card_um(img, f, y_first, n_lines, lh, x0, x1, pad=56, alpha=0.9):
+def card_um(img, f, y_first, n_lines, lh, x0, x1, pad=56, alpha=0.9, extra=0):
     """Kasten, der den sichtbaren Text oben und unten gleich weit umschließt (behebt „Text sitzt zu tief“)."""
     top, base = cap_v(f)
-    y0 = y_first + top - pad; y1 = y_first + (n_lines - 1) * lh + base + pad + int(f.size * 0.06)
+    y0 = y_first + top - pad; y1 = y_first + (n_lines - 1) * lh + base + pad + int(f.size * 0.06) + extra
     card(img, (int(x0), int(y0), int(x1), int(y1)), alpha=alpha)
 
 def serien_pille(d, serie, f, P, x=90, y=246):
@@ -358,10 +358,16 @@ def render(beitrag, style, out, voice):
     n_hook = hook_satzzahl(sentences, beitrag.get('hook', sentences[0]))
     nr = beitrag.get('serie_nummer')
     serie = beitrag['serie'].upper() + (f' #{nr}' if nr else '')
-    with_end = bool(beitrag.get('buchhinweis'))
+    with_end = bool(beitrag.get('endkarte', beitrag.get('buchhinweis')))   # Endtafel nur, wo gewollt (seit Charge 2: Tiefer)
+    zitat_von = beitrag.get('zitat_von')   # z. B. „Seneca“: wird unter der Aussage gezeigt
     with tempfile.TemporaryDirectory() as tmp:
         vt, sr, words, timing = build_audio(sentences, n_hook, voice, tmp, prof, beitrag['sprechtext'])
         sentences = [anzeige_satz(s_) for s_ in sentences]
+        if beitrag.get('zitat_lauter', bool(zitat_von)):   # Zitat am Anfang präsenter, Erklärung danach ruhiger
+            g = float(beitrag.get('zitat_gain', 1.35)); cut = int(timing[n_hook - 1][1] * sr); ramp = int(0.25 * sr)
+            env = np.ones(len(vt), np.float32); env[:cut] = g
+            env[cut:cut + ramp] = np.linspace(g, 1.0, len(env[cut:cut + ramp]))
+            vt = vt * env
         tail = END_CARD if with_end else 0.5
         total = len(vt) / sr + tail
         vt = np.pad(vt, (0, int(total * sr) - len(vt)))
@@ -372,6 +378,7 @@ def render(beitrag, style, out, voice):
         f_hook = font('Lora.ttf', 104, 'Bold') if style == 'tusche' else font('Poppins-Bold.ttf', 104)
         f_cap = font('Poppins-Bold.ttf', 76)
         f_top = font('Lora.ttf', 44, 'Medium') if style == 'tusche' else font('Poppins-SemiBold.ttf', 42)
+        f_zit = font('Lora.ttf', 46, 'Medium')
         f_lab = font('Poppins-Medium.ttf', 34); f_end = font('Poppins-Bold.ttf', 76); f_end2 = font('Lora.ttf', 44, 'Regular')
         cover = buchcover(); cover.thumbnail((620, 870), Image.LANCZOS)
         cov_s = buchcover(); cov_s.thumbnail((240, 330), Image.LANCZOS)
@@ -422,9 +429,9 @@ def render(beitrag, style, out, voice):
                     y = H * 0.40 - ((len(lines) - 1) * lh + base_ + top_) / 2
                     fade = 1 if t < hook_end else max(0, 1 - (t - hook_end) / 0.25)
                     if style in ('himmel', 'cover'):
-                        card_um(img, f_hook, y, len(lines), lh, CX - HOOK_W / 2 - 50, CX + HOOK_W / 2 + 50, pad=72, alpha=0.88 * fade); d = ImageDraw.Draw(img)
+                        card_um(img, f_hook, y, len(lines), lh, CX - HOOK_W / 2 - 50, CX + HOOK_W / 2 + 50, pad=72, alpha=0.88 * fade, extra=80 if zitat_von else 0); d = ImageDraw.Draw(img)
                     # kleines Buchcover unter der Aussage (Wiedererkennung im Vorschaubild)
-                    yb_ = y + (len(lines) - 1) * lh + base_ + 150
+                    yb_ = y + (len(lines) - 1) * lh + base_ + 150 + (80 if zitat_von and style in ('himmel', 'cover') else 0)
                     if fade > 0 and yb_ + cov_s.height < 1500:
                         cv = cov_s.convert('RGBA'); cv.putalpha(int(255 * fade))
                         img.alpha_composite(cv, (int(CX - cov_s.width / 2), int(yb_))); d = ImageDraw.Draw(img)
@@ -433,6 +440,9 @@ def render(beitrag, style, out, voice):
                     col = mixc(P['ink'], P['dimbg'], a * fade)
                     for k, ln in enumerate(lines):
                         tw = d.textlength(ln, font=f_hook); d.text((CX - tw / 2, y + k * lh), ln, font=f_hook, fill=col)
+                    if zitat_von:   # Urheber des Zitats unter der Aussage
+                        zt = '– ' + zitat_von; zy = y + (len(lines) - 1) * lh + base_ + 34
+                        d.text((CX - d.textlength(zt, font=f_zit) / 2, zy), zt, font=f_zit, fill=mixc(P['acc'], P['dimbg'], fade))
                     if style == 'klar':
                         yb = y + (len(lines) - 1) * lh + base_ + 50
                         d.line((CX - 70 * a, yb, CX + 70 * a, yb), fill=RED, width=8)
