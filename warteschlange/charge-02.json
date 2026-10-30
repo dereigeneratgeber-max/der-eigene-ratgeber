@@ -1,0 +1,1671 @@
+{
+ "charge": 2,
+ "start": "2026-11-04",
+ "zeitzone": "Europe/Berlin",
+ "uhrzeit": {
+  "video": "18:30",
+  "karussell": "12:30"
+ },
+ "hinweis": "Freigabe über die Kanalzentrale in claude.ai; Claude überträgt sie als Feld „freigegeben“. Nur freigegebene Beiträge werden veröffentlicht.",
+ "stand": "freigegeben 30.10.2026 (alle 40), überarbeitet 31.10.2026",
+ "beitraege": [
+  {
+   "tag": 1,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 10,
+   "hook": "Das neue Auto löst das falsche Problem.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] Das neue Auto löst das falsche Problem. Auch wenn es wirklich schön ist. Du fährst es nach Hause, parkst es vor der Tür … und wartest auf das Gefühl. [thoughtful] Vielleicht wolltest du gar nicht das Auto. Du wolltest, dass endlich jemand sieht, was du geleistet hast. Dann hast du am Ende ein teureres Auto – und die Sehnsucht ist immer noch da. [warmly] Das Auto darfst du trotzdem wollen. Gib ihm nur keine Aufgabe, die es nicht erfüllen kann. [curious] Welche Aufgabe hat dein nächster Kauf?",
+   "folien": [],
+   "tiktok_text": "Ein Auto kann vieles. Gesehen werden gehört nicht dazu. Erfolg, Motivation.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#motivation",
+    "#anerkennung"
+   ],
+   "instagram_caption": "Wir kaufen Dinge für Gefühle, die sie nicht liefern können. Das Auto darf bleiben – die Erwartung an es vielleicht nicht. Stimmst du zu oder ist das Unsinn?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#anerkennung",
+    "#status",
+    "#mindset"
+   ],
+   "youtube_titel": "Das neue Auto löst das falsche Problem",
+   "youtube_beschreibung": "Warum ein teurer Kauf die Sehnsucht nach Anerkennung nicht stillt. Ein Gedanke aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Kauft man sich Anerkennung – oder nur etwas, das danach aussieht?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-027",
+   "pruefung": 86,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T01-V",
+   "wortzahl": 82,
+   "freigegeben": true
+  },
+  {
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 1,
+   "hook": "Festbeißen ist oft die schwächere Strategie.",
+   "stil": "klar",
+   "sprechtext": "",
+   "folien": [
+    "Festbeißen ist oft die schwächere Strategie.",
+    "Die Annahme: Wer ein Ziel anpasst, gibt auf. Also durchziehen, um jeden Preis.",
+    "Der Befund: Menschen wollen ihre Umwelt nach ihren Zielen formen. Die Forschung nennt das primäre Kontrolle.",
+    "Klappt das nicht, passen sie Ziele und Maßstäbe an. Das heißt sekundäre Kontrolle. So bleibt der Antrieb erhalten.",
+    "Wer umlenkt, wenn ein Ziel unerreichbar wird, dem geht es nach eigenen Angaben besser.",
+    "Die Grenze: Es geht um Ziele, auf die du keinen Einfluss hast. Nicht um alles, was gerade schwer ist.",
+    "Für dich heißt das: Der Wunsch-Club sagt ab? Die Kraft bleibt. Trainerschein, eigenes Team, neuer Verein. Festbeißen oder umlenken – wo steckst du fest?",
+    "Quelle: Heckhausen & Schulz (1995), A life-span theory of control; Wrosch et al. (2003), Adaptive self-regulation of unattainable goals"
+   ],
+   "tiktok_text": "Ziele anpassen ist kein Aufgeben – sagt die Forschung zu Motivation.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#ziele",
+    "#disziplin"
+   ],
+   "instagram_caption": "Durchziehen um jeden Preis gilt als Stärke. Die Forschung sieht das anders: Wer bei unerreichbaren Zielen umlenkt, dem geht es besser. Stärke oder Ausrede – was meinst du?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#ziele",
+    "#forschung",
+    "#mindset",
+    "#disziplin"
+   ],
+   "youtube_titel": "Festbeißen oder umlenken? Was die Forschung sagt",
+   "youtube_beschreibung": "Primäre und sekundäre Kontrolle einfach erklärt: Was Menschen tun, wenn ein Ziel unerreichbar wird. Quelle: Heckhausen & Schulz (1995); Wrosch et al. (2003).",
+   "angepinnter_kommentar": "Ist ein Ziel anzupassen Schwäche oder die klügere Entscheidung?",
+   "buchhinweis": false,
+   "quelle": "Heckhausen, J., & Schulz, R. (1995). A life-span theory of control; Wrosch, C., Scheier, M. F., Miller, G. E., Schulz, R., & Carver, C. S. (2003). Adaptive self-regulation of unattainable goals",
+   "einheit_id": "E-227",
+   "tag": 2,
+   "laenge": "karussell",
+   "pruefung": 82,
+   "id": "C02-T02-K",
+   "wortzahl": 129,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 2,
+   "format": "video",
+   "serie": "Innehalten",
+   "serie_nummer": 1,
+   "hook": "„Ein Ergebnis braucht keine Leidensgeschichte, damit du dich darüber freuen darfst.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Ein Ergebnis braucht keine Leidensgeschichte, damit du dich darüber freuen darfst.“ [thoughtful] Dieser Satz steht so im Buch. Er zielt auf eine Gewohnheit: Wir erzählen Erfolge gern schwerer, als sie waren. Nachtschichten, Verzicht, Zweifel. [warmly] Aber wenn dein Weg funktioniert und sich gut anfühlt, ist das kein Makel. Es ist ein Vorteil. [curious] Wann hast du einen Erfolg zuletzt kleingeredet, weil er leicht war?",
+   "folien": [],
+   "tiktok_text": "Muss Erfolg wehtun, um zu zählen? Erfolg, Motivation.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#disziplin",
+    "#motivation"
+   ],
+   "instagram_caption": "Ein Satz aus dem Buch: Ein Ergebnis braucht keine Leidensgeschichte, damit du dich darüber freuen darfst. Erzählst du deine Erfolge manchmal härter, als sie waren?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#disziplin",
+    "#motivation",
+    "#mindset"
+   ],
+   "youtube_titel": "Ein Ergebnis braucht keine Leidensgeschichte",
+   "youtube_beschreibung": "Ein Satz zum Innehalten aus „Der eigene Ratgeber“ und was er für den Blick auf eigene Erfolge bedeutet.",
+   "angepinnter_kommentar": "Ist ein leichter Erfolg weniger wert?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-063",
+   "pruefung": 83,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Der eigene Ratgeber",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T02-V",
+   "wortzahl": 61,
+   "freigegeben": true
+  },
+  {
+   "tag": 3,
+   "format": "video",
+   "serie": "Zitat",
+   "serie_nummer": 1,
+   "hook": "„Es ist nicht genug zu wissen, man muss auch anwenden.“",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Es ist nicht genug zu wissen, man muss auch anwenden.“ [thoughtful] Das hat Goethe vor rund zweihundert Jahren geschrieben. Heute sieht das so aus. Gespeicherte Videos, Screenshots, Lesezeichen … und es fühlt sich an, als kämst du voran. Aber Informieren fühlt sich nur an wie Fortschritt. Fortschritt fängt da an, wo du etwas tust, das du gestern noch nicht getan hast. [curious] Was hast du gespeichert und nie gemacht?",
+   "folien": [],
+   "tiktok_text": "Gespeichert ist nicht gemacht. Motivation, Disziplin.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#disziplin",
+    "#goethe"
+   ],
+   "instagram_caption": "Goethe wusste es schon: Wissen allein reicht nicht. Gespeicherte Beiträge fühlen sich wie Fortschritt an – sind aber keiner. Wie viele gespeicherte Videos hast du nie umgesetzt?",
+   "instagram_hashtags": [
+    "#goethe",
+    "#zitate",
+    "#motivation",
+    "#disziplin",
+    "#mindset"
+   ],
+   "youtube_titel": "Goethe: Wissen allein ist nicht genug",
+   "youtube_beschreibung": "Ein Satz von Goethe und warum Informieren sich nur nach Fortschritt anfühlt. Mit einem Gedanken aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Was hast du gespeichert und nie gemacht?",
+   "buchhinweis": false,
+   "quelle": "Johann Wolfgang von Goethe: Wilhelm Meisters Wanderjahre (1829), „Betrachtungen im Sinne der Wanderer“; Original: „Es ist nicht genug, zu wissen, man muß auch anwenden; es ist nicht genug, zu wollen, man muß auch tun.“",
+   "einheit_id": "E-074",
+   "pruefung": 86,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "zitat_von": "Goethe",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T03-V",
+   "wortzahl": 66,
+   "freigegeben": true
+  },
+  {
+   "tag": 4,
+   "format": "video",
+   "serie": "Tiefer",
+   "serie_nummer": 5,
+   "hook": "Jedes erreichte Ziel wird zum neuen Normal.",
+   "stil": "tusche",
+   "laenge": "lang",
+   "sprechtext": "[confident] Jedes erreichte Ziel wird zum neuen Normal. Und genau deshalb fühlt es sich so schnell nach nichts an. Denk an deine erste eigene Wohnung. Am Anfang bist du durch die Räume gelaufen und konntest es kaum glauben. Ein Jahr später ist es einfach … die Wohnung. Oder die Gehaltserhöhung. Zwei Monate lang fühlt sie sich gut an. Dann ist sie das Geld, mit dem du eben rechnest. [thoughtful] Die Forschung hat dafür einen Namen. Kahneman und Kollegen sprechen von einer Tretmühle. Dein Zustand wird besser, dein Maßstab steigt mit – und deine Zufriedenheit bleibt, wo sie war. Schon in einer bekannten Studie von 1978 bewerteten Lottogewinner alltägliche Freuden niedriger als andere. Das heißt nicht, dass Ziele sinnlos sind. Das Problem ist ein Maßstab, der jedes Mal unbemerkt mitwandert. [warmly] Du kannst dir ein Genug setzen, bevor du ankommst. Dann darf das Erreichte auch zählen, wenn es da ist. [curious] Was war für dich einmal ein großes Ziel und ist heute selbstverständlich?",
+   "folien": [],
+   "tiktok_text": "Warum sich jedes erreichte Ziel so schnell normal anfühlt. Ziele, Erfolg.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#erfolg",
+    "#psychologie"
+   ],
+   "instagram_caption": "Die Wohnung, das Gehalt, die neue Bestzeit – alles wird nach kurzer Zeit normal. Die Forschung nennt das Zufriedenheitstretmühle. Was war für dich mal ein Traum und ist heute Alltag?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#erfolg",
+    "#psychologie",
+    "#zufriedenheit",
+    "#mindset"
+   ],
+   "youtube_titel": "Warum jedes Ziel so schnell normal wird",
+   "youtube_beschreibung": "Gewöhnung und mitwachsende Erwartung: was die Forschung über die Zufriedenheitstretmühle sagt. Quellen: Kahneman & Thaler (2006); Brickman, Coates & Janoff-Bulman (1978). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Ist die Gewöhnung an Erfolg Fluch oder Antrieb?",
+   "buchhinweis": true,
+   "quelle": "Kahneman, D., & Thaler, R. H. (2006). Anomalies: Utility maximization and experienced utility; Brickman, P., Coates, D., & Janoff-Bulman, R. (1978). Lottery winners and accident victims: Is happiness relative?",
+   "einheit_id": "E-244",
+   "pruefung": 86,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "endkarte": true,
+   "id": "C02-T04-V",
+   "wortzahl": 156,
+   "freigegeben": true
+  },
+  {
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 2,
+   "hook": "Du überschätzt, wie lange der Kick hält.",
+   "stil": "klar",
+   "sprechtext": "",
+   "folien": [
+    "Du überschätzt, wie lange der Kick hält.",
+    "Die Annahme: Zusage da, Kontostand fünfstellig, Führerschein in der Tasche. Dann fühlst du dich monatelang richtig gut.",
+    "Der Befund: Menschen wollen Dinge wegen eines erwarteten Gefühls. Und liegen damit systematisch daneben. Die Forscher nennen das „miswanting“.",
+    "Am besten belegt: Wir überschätzen, wie stark ein künftiges Gefühl wird. Und wie lange es hält.",
+    "Die Grenze: Das ist ein Muster über viele Menschen. Wie stark es bei dir wirkt, sagt die Forschung nicht.",
+    "Für dich heißt das: Nicht dein Wunsch ist falsch. Das Ziel ist nur ein schlechter Stellvertreter. Für das Gefühl, das du dir versprichst.",
+    "Wie lange hat sich dein letztes Ziel wirklich gut angefühlt?",
+    "Quelle: Wilson, T. D., & Gilbert, D. T. (2005). Affective forecasting: Knowing what to want."
+   ],
+   "tiktok_text": "Ziel erreicht, Kick nach zwei Tagen weg – warum du dich da systematisch verschätzt. Ziele, Erfolg.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#ziele",
+    "#psychologie"
+   ],
+   "instagram_caption": "Wir überschätzen, wie stark und wie lange sich ein erreichtes Ziel gut anfühlt. Das ist gut belegt. Der Wunsch ist nicht falsch, nur die Erwartung daneben. Kennst du das oder trifft das auf dich nicht zu?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#ziele",
+    "#psychologie",
+    "#motivation"
+   ],
+   "youtube_titel": "Warum der Kick nach dem Ziel so schnell weg ist",
+   "youtube_beschreibung": "Was die Forschung zu „affective forecasting“ zeigt: Wir überschätzen Stärke und Dauer künftiger Gefühle. Quelle: Wilson, T. D., & Gilbert, D. T. (2005). Affective forecasting: Knowing what to want.",
+   "angepinnter_kommentar": "Ist ein Ziel noch was wert, wenn der Kick nach zwei Tagen weg ist?",
+   "buchhinweis": false,
+   "quelle": "Wilson, T. D., & Gilbert, D. T. (2005). Affective forecasting: Knowing what to want.",
+   "einheit_id": "E-189",
+   "tag": 5,
+   "laenge": "karussell",
+   "pruefung": 81,
+   "id": "C02-T05-K",
+   "wortzahl": 126,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 5,
+   "format": "video",
+   "serie": "Eine Frage",
+   "serie_nummer": 3,
+   "hook": "Du willst den Porsche. Aber was genau daran?",
+   "stil": "himmel",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Du willst den Porsche. Aber was genau daran? Das ist keine Fangfrage. [thoughtful] Ist es das Fahren, der Klang beim Starten, das Aussehen … oder die Blicke der anderen? Der Wunsch darf bleiben. Die Frage zeigt nur, was du eigentlich mit ihm verbindest. [curious] Was ist es bei dir?",
+   "folien": [],
+   "tiktok_text": "Fahren, Klang oder Blicke – was willst du wirklich? Ziele, Motivation.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#porsche"
+   ],
+   "instagram_caption": "Ein großer Wunsch besteht oft aus mehreren kleinen. Das Fahren, der Klang, das Gefühl, gesehen zu werden. Was ist es bei dir – schreib es in die Kommentare.",
+   "instagram_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#traumauto",
+    "#mindset"
+   ],
+   "youtube_titel": "Du willst den Porsche. Aber was genau daran?",
+   "youtube_beschreibung": "Eine Frage, die einen großen Wunsch in seine Teile zerlegt. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Fahren, Klang oder Blicke – was ist es bei dir?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-008",
+   "pruefung": 82,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T05-V",
+   "wortzahl": 46,
+   "freigegeben": true
+  },
+  {
+   "tag": 6,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 11,
+   "hook": "Was dich viel kostet, findest du automatisch gut.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] Was dich viel kostet, findest du automatisch gut. Genau deshalb kannst du dem Urteil nicht trauen. Das teure Coaching, das Jahr im falschen Studium, die Monate für ein Projekt … [thoughtful] Ein Experiment von 1959 zeigt das. Wer eine harte Aufnahme in eine Gruppe hinter sich hatte, fand sie danach besser. Denn wer viel investiert hat, kann schlecht gleichzeitig finden, dass es das nicht wert war. Das macht dein Urteil nicht falsch – aber verdächtig. [curious] Was findest du gut, weil es teuer war?",
+   "folien": [],
+   "tiktok_text": "Je teurer, desto besser? Dein Kopf schummelt. Psychologie, Erfolg.",
+   "tiktok_hashtags": [
+    "#psychologie",
+    "#erfolg",
+    "#mindset"
+   ],
+   "instagram_caption": "Wer viel investiert, will hinterher, dass es sich gelohnt hat. Ein klassisches Experiment zeigt, wie stark das unser Urteil färbt. Erwischst du dich dabei auch?",
+   "instagram_hashtags": [
+    "#psychologie",
+    "#mindset",
+    "#erfolg",
+    "#entscheidungen"
+   ],
+   "youtube_titel": "Was viel kostet, findest du automatisch gut",
+   "youtube_beschreibung": "Warum hoher Einsatz unser Urteil schönfärbt. Quelle: Aronson & Mills (1959). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Was hast du dir schöngeredet, weil es teuer war?",
+   "buchhinweis": false,
+   "quelle": "Aronson, E., & Mills, J. (1959). The effect of severity of initiation on liking for a group",
+   "einheit_id": "E-210",
+   "pruefung": 85,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T06-V",
+   "wortzahl": 80,
+   "freigegeben": true
+  },
+  {
+   "tag": 7,
+   "format": "video",
+   "serie": "Zitat",
+   "serie_nummer": 2,
+   "hook": "„Während wir es aufschieben, eilt das Leben vorüber.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Während wir es aufschieben, eilt das Leben vorüber.“ [thoughtful] Das schrieb Seneca vor fast zweitausend Jahren an einen Freund. Er meinte nicht Faulheit. Er meinte das Warten auf den Moment, ab dem es endlich richtig losgeht. Nach dem Abschluss, nach der Beförderung, wenn das Auto da ist. [warmly] Dein Ziel darf bleiben. Aber die Zeit bis dahin ist keine Wartezeit, sondern dein Leben. [curious] Worauf wartest du gerade?",
+   "folien": [],
+   "tiktok_text": "Das Leben bis zum Ziel ist kein Wartezimmer. Ziele, Motivation.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#seneca"
+   ],
+   "instagram_caption": "Seneca, vor fast 2.000 Jahren: Während wir es aufschieben, eilt das Leben vorüber. Das Ziel darf bleiben – aber die Zeit bis dahin ist schon dein Leben. Worauf wartest du gerade?",
+   "instagram_hashtags": [
+    "#seneca",
+    "#stoizismus",
+    "#zitate",
+    "#ziele",
+    "#leben"
+   ],
+   "youtube_titel": "Seneca: Während wir aufschieben, eilt das Leben",
+   "youtube_beschreibung": "Ein Satz von Seneca über das Aufschieben und warum die Zeit bis zum Ziel keine Wartezeit ist. Mit einem Gedanken aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Lebst du gerade – oder wartest du auf den richtigen Moment?",
+   "buchhinweis": false,
+   "quelle": "Seneca: Epistulae morales ad Lucilium 1,3 („dum differtur vita transcurrit“), übersetzt",
+   "einheit_id": "E-145",
+   "pruefung": 85,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Seneca",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T07-V",
+   "wortzahl": 65,
+   "freigegeben": true
+  },
+  {
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 3,
+   "hook": "Das perfekte Setup findest du nie.",
+   "stil": "klar",
+   "sprechtext": "",
+   "folien": [
+    "Das perfekte Setup findest du nie.",
+    "Die Annahme: Wer klug ist, vergleicht alles. Jede Grafikkarte, jedes Auto, jeden Job. Bis das Beste gefunden ist.",
+    "Der Befund: Menschen haben begrenzte Zeit und begrenztes Wissen. Sie durchsuchen nicht alle Möglichkeiten nach der besten.",
+    "Sie legen vorher fest, was reicht. Und nehmen die erste Option, die das erfüllt. Herbert Simon nannte das satisficing: zufriedenstellen statt maximieren.",
+    "Simon bekam 1978 den Wirtschaftsnobelpreis für seine Arbeiten zur Entscheidungsfindung. Die Grenze: Er beschrieb Entscheidungen. Das Buch überträgt den Gedanken auf deine Zufriedenheit.",
+    "Für dich heißt das: Ohne eigenes Genug läuft der Vergleich endlos weiter. Denn es gibt immer ein besseres Setup.",
+    "Das erste Setup, das alles kann, was du brauchst? Fertig. Wann hast du zuletzt aufgehört zu suchen?",
+    "Quelle: Simon (1956), Rational choice and the structure of the environment"
+   ],
+   "tiktok_text": "Das perfekte Setup findest du nie – warum eigentlich?",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#entscheidungen",
+    "#mindset"
+   ],
+   "instagram_caption": "Immer das Beste suchen klingt klug. Herbert Simon beschrieb etwas anderes: festlegen, was reicht, und dann aufhören. Maximierer oder Genug-Setzer – was bist du?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#entscheidungen",
+    "#forschung",
+    "#mindset"
+   ],
+   "youtube_titel": "Warum du das perfekte Setup nie findest",
+   "youtube_beschreibung": "Herbert Simon und satisficing: Wie ein vorher festgelegtes Genug die Suche nach dem Besseren beendet. Quelle: Simon (1956). Aus dem Buch – Link im Profil.",
+   "angepinnter_kommentar": "These: Wer immer das Beste will, hat am Ende weniger als der, der weiß, was reicht. Stimmt das?",
+   "buchhinweis": true,
+   "quelle": "Simon (1956), Rational choice and the structure of the environment",
+   "einheit_id": "E-243",
+   "tag": 8,
+   "laenge": "karussell",
+   "pruefung": 88,
+   "id": "C02-T08-K",
+   "wortzahl": 133,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 8,
+   "format": "video",
+   "serie": "Denkfehler",
+   "serie_nummer": 8,
+   "hook": "„No pain, no gain“ beweist gar nichts.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] „No pain, no gain“ beweist gar nichts. Gerade dann nicht, wenn du stark bist. Der Satz sagt: Wenn es wehtut, bist du richtig. [thoughtful] Aber Härte allein zeigt nicht, ob dein Weg passt. Wer jede Mühe als Bestätigung nimmt, bleibt womöglich jahrelang auf einem schlechten Weg. Und wer jede Mühe als Stoppschild liest, gibt zu früh auf. Ob dein Weg passt, sagt dir nicht der Schmerz. Das sagt dir die Frage, wofür du ihn gehst. [curious] Ist es bei dir Durchhalten oder Festhängen?",
+   "folien": [],
+   "tiktok_text": "Schmerz ist kein Beweis, dass du richtig bist. Disziplin, Motivation.",
+   "tiktok_hashtags": [
+    "#disziplin",
+    "#motivation",
+    "#nopainnogain"
+   ],
+   "instagram_caption": "Mühe kann ein gutes Zeichen sein. Oder ein Zeichen, dass du festhängst. Der Schmerz allein sagt es dir nicht. Durchhalten oder Festhängen – woran erkennst du den Unterschied?",
+   "instagram_hashtags": [
+    "#disziplin",
+    "#motivation",
+    "#nopainnogain",
+    "#mindset"
+   ],
+   "youtube_titel": "„No pain, no gain“ beweist gar nichts",
+   "youtube_beschreibung": "Warum Härte allein nicht zeigt, ob ein Weg richtig ist. Denkfehler aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Woran erkennst du, ob du durchhältst oder festhängst?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-065",
+   "pruefung": 84,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T08-V",
+   "wortzahl": 81,
+   "freigegeben": true
+  },
+  {
+   "tag": 9,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 12,
+   "hook": "„Ist mir egal, was andere denken“ stimmt selten.",
+   "stil": "tusche",
+   "laenge": "kurz",
+   "sprechtext": "[confident] „Ist mir egal, was andere denken“ stimmt selten. Und das ist völlig okay. Wer Lob will und sich das verbietet, erzählt sich, er mache alles nur für sich. [thoughtful] Der Wunsch verschwindet dadurch nicht – du verstehst ihn bloß nicht mehr. Das ist freundlich verpackter Selbstbetrug. [curious] Wessen Meinung ist dir nicht egal?",
+   "folien": [],
+   "tiktok_text": "Niemandem ist alles egal. Und das ist okay. Anerkennung, Mindset.",
+   "tiktok_hashtags": [
+    "#anerkennung",
+    "#mindset",
+    "#selbstbewusstsein"
+   ],
+   "instagram_caption": "Lob zu wollen ist menschlich. Wer es sich verbietet, versteht den eigenen Wunsch nicht mehr. Ehrlich jetzt: Wessen Meinung ist dir nicht egal?",
+   "instagram_hashtags": [
+    "#anerkennung",
+    "#mindset",
+    "#selbstbewusstsein",
+    "#ehrlichkeit"
+   ],
+   "youtube_titel": "„Ist mir egal, was andere denken“ stimmt selten",
+   "youtube_beschreibung": "Warum es Selbstbetrug ist, sich den Wunsch nach Anerkennung zu verbieten. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Ist „Mir ist egal, was andere denken“ Stärke oder Ausrede?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-020",
+   "pruefung": 85,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T09-V",
+   "wortzahl": 50,
+   "freigegeben": true
+  },
+  {
+   "tag": 10,
+   "format": "video",
+   "serie": "Eine Frage",
+   "serie_nummer": 4,
+   "hook": "Würdest du es wollen, wenn es keiner sieht?",
+   "stil": "himmel",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Würdest du es wollen, wenn es keiner sieht? Kein Post, keine Story, kein Applaus. [thoughtful] Stell dir dein Ziel erfüllt vor, ganz konkret … und dann nimm das Publikum weg. Was dann noch übrig ist, gehört wirklich dir. [curious] Was bleibt bei deinem Ziel ohne Zuschauer?",
+   "folien": [],
+   "tiktok_text": "Dein Ziel ohne Publikum – was bleibt? Ziele, Motivation.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#socialmedia"
+   ],
+   "instagram_caption": "Nimm deinem Ziel die Zuschauer weg. Was dann noch bleibt, ist der Teil, der wirklich dir gehört. Was bleibt bei dir?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#socialmedia",
+    "#mindset"
+   ],
+   "youtube_titel": "Würdest du es wollen, wenn es keiner sieht?",
+   "youtube_beschreibung": "Eine Frage, die zeigt, welcher Teil deines Ziels wirklich dir gehört. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Welches deiner Ziele würdest du ohne Zuschauer streichen?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-016",
+   "pruefung": 83,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T10-V",
+   "wortzahl": 43,
+   "freigegeben": true
+  },
+  {
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 4,
+   "hook": "Den Coolen spielen hilft dir eher nicht.",
+   "stil": "klar",
+   "sprechtext": "",
+   "folien": [
+    "Den Coolen spielen hilft dir eher nicht.",
+    "Die Annahme: Der Chef sagt „stark gemacht“ und du freust dich? Besser cool bleiben. Sonst wirst du abhängig.",
+    "Der Befund: Der Wunsch nach Anerkennung und Zugehörigkeit ist gut belegt. Er gilt als Grundmotiv des Menschen.",
+    "Wegdrücken hilft eher nicht. Ein Gefühl in Worte fassen dämpft dagegen messbar die Reaktion im Gehirn.",
+    "Abhängig macht etwas anderes: woran du deinen Wert knüpfst. Nur an das „stark gemacht“ vom Chef?",
+    "Die Grenze: Das sind überwiegend Zusammenhangsstudien. Sie sagen nichts über einen einzelnen Menschen voraus. Auch nicht über dich.",
+    "Für dich heißt das: Du darfst Anerkennung wollen. Und selbst entscheiden, was sie bei dir bewirkt. Was soll sie bewirken?",
+    "Quellen: Baumeister & Leary (1995); Gross (2002); Lieberman et al. (2007); Torre & Lieberman (2018); Crocker & Wolfe (2001)."
+   ],
+   "tiktok_text": "Gefühle wegdrücken oder benennen – was die Psychologie zu Anerkennung zeigt.",
+   "tiktok_hashtags": [
+    "#mindset",
+    "#anerkennung",
+    "#psychologie"
+   ],
+   "instagram_caption": "Cool tun, wenn dich Anerkennung freut, hilft eher nicht. Gefühle benennen wirkt messbar. Das sind Zusammenhangsstudien, keine Vorhersage für dich. Stimmst du zu oder ist das Unsinn?",
+   "instagram_hashtags": [
+    "#mindset",
+    "#anerkennung",
+    "#psychologie",
+    "#selbstwert"
+   ],
+   "youtube_titel": "Gefühle wegdrücken oder benennen? Was Studien zeigen",
+   "youtube_beschreibung": "Was die Forschung zum Wunsch nach Anerkennung zeigt – und wo ihre Grenzen liegen. Quellen: Baumeister, R. F., & Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation.; Gross, J. J. (2002). Emotion regulation: Affective, cognitive, and social consequences.; Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli.; Torre, J. B., & Lieberman, M. D. (2018). Putting feelings into words: Affect labeling as implicit emotion regulation.; Crocker, J., & Wolfe, C. T. (2001). Contingencies of self-worth.",
+   "angepinnter_kommentar": "Was soll ein „stark gemacht“ bei dir bewirken – ehrlich?",
+   "buchhinweis": false,
+   "quelle": "Baumeister, R. F., & Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation.; Gross, J. J. (2002). Emotion regulation: Affective, cognitive, and social consequences.; Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli.; Torre, J. B., & Lieberman, M. D. (2018). Putting feelings into words: Affect labeling as implicit emotion regulation.; Crocker, J., & Wolfe, C. T. (2001). Contingencies of self-worth.",
+   "einheit_id": "E-195",
+   "tag": 11,
+   "laenge": "karussell",
+   "pruefung": 75,
+   "id": "C02-T11-K",
+   "wortzahl": 131,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 11,
+   "format": "video",
+   "serie": "Tiefer",
+   "serie_nummer": 6,
+   "hook": "„Wer die Wahl hat, hat die Qual.“",
+   "stil": "tusche",
+   "laenge": "lang",
+   "sprechtext": "[serious] „Wer die Wahl hat, hat die Qual.“ [confident] Das Sprichwort hat sogar die Forschung beschäftigt. Ihr Ergebnis: Die Qual hängt oft daran, wie du wählst. Du hast die Kopfhörer gekauft, nach drei Tagen Vergleichen. Und trotzdem liest du danach noch Testberichte. Oder du hast den Job angenommen und schaust jede Woche, was es sonst gegeben hätte. [thoughtful] Barry Schwartz und Kollegen haben 2002 zwei Typen unterschieden. Maximierer vergleichen immer weiter. Die anderen nehmen die erste Option, die ihre Kriterien erfüllt. Die Maximierer bereuten mehr, verglichen mehr und waren im Schnitt weniger zufrieden mit ihrem Leben. Das sind Zusammenhänge, kein Naturgesetz – und der Fragebogen wurde später überarbeitet. Aber der Kern passt. Ohne eigenes Kriterium endet das Vergleichen nie. Irgendwo könnte immer etwas Besseres sein. [warmly] Ein Kriterium zu haben heißt, mit dem Vergleichen aufhören zu dürfen, sobald es erfüllt ist. [curious] Wann hast du zuletzt nach dem Kauf noch weiterverglichen?",
+   "folien": [],
+   "tiktok_text": "Das Beste wollen macht dich nicht zufriedener. Psychologie, Entscheidungen.",
+   "tiktok_hashtags": [
+    "#psychologie",
+    "#entscheidungen",
+    "#mindset"
+   ],
+   "instagram_caption": "Maximierer vergleichen auch nach der Entscheidung weiter – und sind im Schnitt weniger zufrieden. Ein eigenes Kriterium beendet das. Bist du eher Maximierer oder nimmst du, was passt?",
+   "instagram_hashtags": [
+    "#psychologie",
+    "#entscheidungen",
+    "#zufriedenheit",
+    "#mindset",
+    "#vergleich"
+   ],
+   "youtube_titel": "„Wer die Wahl hat, hat die Qual“ – was die Forschung sagt",
+   "youtube_beschreibung": "Maximierer und Zufriedene: was die Forschung über das ständige Vergleichen sagt. Quelle: Schwartz et al. (2002). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Das Beste wollen – Ehrgeiz oder Falle?",
+   "buchhinweis": true,
+   "quelle": "Schwartz, B., Ward, A., Monterosso, J., Lyubomirsky, S., White, K., & Lehman, D. R. (2002). Maximizing versus satisficing: Happiness is a matter of choice",
+   "einheit_id": "E-198",
+   "pruefung": 86,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "endkarte": true,
+   "id": "C02-T11-V",
+   "wortzahl": 145,
+   "freigegeben": true
+  },
+  {
+   "tag": 12,
+   "format": "video",
+   "serie": "Klartext",
+   "serie_nummer": 7,
+   "hook": "Du schuldest deinem sechzehnjährigen Ich nichts.",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[confident] Du schuldest deinem sechzehnjährigen Ich nichts. Auch nicht die Villa, die du ihm versprochen hast. Damals stand der Wunsch für etwas: Freiheit, Respekt, endlich jemand sein. [thoughtful] Vielleicht bekommst du genau das heute längst auf anderem Weg. Dann musst du dem alten Wunsch nicht aus Treue hinterherlaufen. [warmly] Du darfst neu entscheiden. [curious] Welchen alten Traum würdest du heute nicht mehr unterschreiben?",
+   "folien": [],
+   "tiktok_text": "Dein jüngeres Ich hat nicht das letzte Wort. Ziele, Träume.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#traeume"
+   ],
+   "instagram_caption": "Manche Wünsche tragen wir nur noch mit, weil wir sie früher hatten. Du darfst neu entscheiden, ohne dein früheres Ich zu verraten. Welchen Traum hast du losgelassen?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#traeume",
+    "#motivation",
+    "#mindset"
+   ],
+   "youtube_titel": "Du schuldest deinem jüngeren Ich nichts",
+   "youtube_beschreibung": "Warum du einem früheren Wunsch nicht aus Treue folgen musst. Klartext aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Einen Traum loslassen – Schwäche oder Erwachsenwerden?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-148",
+   "pruefung": 85,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T12-V",
+   "wortzahl": 59,
+   "freigegeben": true
+  },
+  {
+   "tag": 13,
+   "format": "video",
+   "serie": "Sprichwort",
+   "serie_nummer": 1,
+   "hook": "„Wer rastet, der rostet.“",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Wer rastet, der rostet.“ [confident] Das stimmt sogar. Nur ist zufrieden sein kein Rasten. Viele glauben: Wenn ich zufrieden bin, werde ich faul. [thoughtful] Aber denk an etwas, das du richtig gern machst. Da zieht dich die nächste Möglichkeit an, nicht der Mangel. Wer nur über Mangel antreibt, rennt. Wer zufrieden ist, geht … und kommt oft weiter. [curious] Treibt dich gerade Lust an oder Angst?",
+   "folien": [],
+   "tiktok_text": "Zufrieden heißt nicht eingerostet. Motivation, Disziplin.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#disziplin",
+    "#neversatisfied"
+   ],
+   "instagram_caption": "Wer rastet, der rostet – klar. Aber Zufriedenheit ist kein Rasten. Das Buch hält die Sorge, Zufriedenheit mache faul, für falsch. Was treibt dich an: Lust oder Mangel?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#neversatisfied",
+    "#disziplin",
+    "#mindset",
+    "#zufriedenheit"
+   ],
+   "youtube_titel": "„Wer rastet, der rostet“ – und Zufriedenheit?",
+   "youtube_beschreibung": "Ein bekanntes Sprichwort und warum Zufriedenheit trotzdem nicht faul macht. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Macht Zufriedenheit faul – ja oder nein?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-140",
+   "pruefung": 84,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "zitat_von": "Sprichwort",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T13-V",
+   "wortzahl": 62,
+   "freigegeben": true
+  },
+  {
+   "tag": 14,
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 5,
+   "hook": "Zu viel Auswahl lähmt dich nicht. Fehlende Klarheit schon.",
+   "stil": "klar",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Zu viel Auswahl lähmt dich nicht. Fehlende Klarheit schon.",
+    "Die Annahme: Je mehr Optionen, desto schwerer die Wahl. Bei vierundzwanzig Marmeladen kauft keiner mehr.",
+    "Das Experiment: An einem Tisch mit vierundzwanzig Sorten blieben mehr Leute stehen. Gekauft wurde aber am Tisch mit sechs deutlich häufiger.",
+    "Der Befund danach: Eine Auswertung von fünfzig Experimenten mit rund fünftausend Menschen fand keinen verlässlichen allgemeinen Effekt.",
+    "Der Effekt hängt an Bedingungen: zum Beispiel, wie schwer die Wahl ist und ob jemand schon weiß, was er will.",
+    "Die Grenze: Es gibt Situationen, in denen viele Optionen wirklich überfordern. Nur liegt es dann selten an der Menge allein.",
+    "Für dich heißt das: Bei Job, Studium oder Stadt hilft nicht weniger Auswahl, sondern ein eigenes Kriterium. Was ist deins?",
+    "Quelle: Iyengar & Lepper (2000); Scheibehenne, Greifeneder & Todd (2010); Chernev, Böckenholt & Goodman (2015)"
+   ],
+   "tiktok_text": "Zu viele Optionen sind nicht dein Problem. Entscheidungen, Karriere.",
+   "tiktok_hashtags": [
+    "#entscheidungen",
+    "#karriere",
+    "#psychologie"
+   ],
+   "instagram_caption": "Das berühmte Marmeladen-Experiment wird oft als Beweis genommen, dass zu viel Auswahl lähmt. Spätere Forschung zeigt: Es kommt darauf an, ob du weißt, was du willst. Kennst du dein Kriterium?",
+   "instagram_hashtags": [
+    "#entscheidungen",
+    "#psychologie",
+    "#forschung",
+    "#karriere",
+    "#mindset"
+   ],
+   "youtube_titel": "Lähmt zu viel Auswahl? Was die Forschung sagt",
+   "youtube_beschreibung": "Vom Marmeladen-Experiment zur Meta-Analyse. Quellen: Iyengar & Lepper (2000); Scheibehenne et al. (2010); Chernev et al. (2015).",
+   "angepinnter_kommentar": "Liegt es an zu vielen Optionen – oder daran, dass du nicht weißt, was du willst?",
+   "buchhinweis": true,
+   "quelle": "Iyengar, S. S., & Lepper, M. R. (2000). When choice is demotivating; Scheibehenne, B., Greifeneder, R., & Todd, P. M. (2010). Can there ever be too many options? A meta-analytic review of choice overload; Chernev, A., Böckenholt, U., & Goodman, J. (2015). Choice overload: A conceptual review and meta-analysis",
+   "einheit_id": "E-197",
+   "pruefung": 84,
+   "id": "C02-T14-K",
+   "wortzahl": 137,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 14,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 13,
+   "hook": "Was andere für dich wollen, sind ihre Wünsche.",
+   "stil": "tusche",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Was andere für dich wollen, sind ihre Wünsche. Nicht deine, auch wenn es sich so anfühlt. Der Kumpel findet dein Leben langweilig, die Familie hätte gern den sicheren Job. [thoughtful] Das sagt etwas über das, was sie sich wünschen – es muss nicht zu deinem werden. [curious] Wessen Wunsch lebst du gerade?",
+   "folien": [],
+   "tiktok_text": "Ihr Wunsch ist nicht dein Auftrag. Ziele, Leben.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#leben",
+    "#mindset"
+   ],
+   "instagram_caption": "Andere sehen auf dein Leben und hätten gern mehr davon oder etwas anderes. Das sagt etwas über ihre Wünsche, nicht über deine. Wessen Erwartungen spürst du am stärksten?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#leben",
+    "#erwartungen",
+    "#mindset"
+   ],
+   "youtube_titel": "Was andere für dich wollen, sind ihre Wünsche",
+   "youtube_beschreibung": "Warum fremde Erwartungen an dein Leben nicht zu deinen Wünschen werden müssen. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Wessen Erwartungen bestimmen dein Leben mehr, als du zugeben würdest?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-109",
+   "pruefung": 80,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T14-V",
+   "wortzahl": 49,
+   "freigegeben": true
+  },
+  {
+   "tag": 15,
+   "format": "video",
+   "serie": "Innehalten",
+   "serie_nummer": 2,
+   "hook": "„Entscheide dich. Nicht für immer. Aber für jetzt.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Entscheide dich. Nicht für immer. Aber für jetzt.“ [thoughtful] Der Satz aus dem Buch klingt streng. Gemeint ist eher das Gegenteil: Du musst nicht die perfekte Wahl fürs ganze Leben treffen. Wer sich alles offenhält, erlebt am Ende kaum etwas davon. [warmly] Eine Entscheidung für jetzt bringt dir Erfahrung, die dir kein Grübeln geben kann. [curious] Was würdest du wählen, wenn es nur für ein Jahr gelten müsste?",
+   "folien": [],
+   "tiktok_text": "Nicht für immer. Für jetzt. Entscheidungen, Motivation.",
+   "tiktok_hashtags": [
+    "#entscheidungen",
+    "#motivation",
+    "#mindset"
+   ],
+   "instagram_caption": "Ein Satz aus dem Buch: Entscheide dich. Nicht für immer. Aber für jetzt. Nicht jede Wahl muss fürs ganze Leben passen. Was würdest du wählen, wenn es nur für ein Jahr gelten müsste?",
+   "instagram_hashtags": [
+    "#entscheidungen",
+    "#motivation",
+    "#mindset",
+    "#leben"
+   ],
+   "youtube_titel": "Entscheide dich. Nicht für immer. Aber für jetzt.",
+   "youtube_beschreibung": "Ein Satz zum Innehalten aus „Der eigene Ratgeber“ über Entscheidungen, die nicht endgültig sein müssen.",
+   "angepinnter_kommentar": "Was hältst du dir schon zu lange offen?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-040",
+   "pruefung": 84,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "zitat_von": "Der eigene Ratgeber",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T15-V",
+   "wortzahl": 65,
+   "freigegeben": true
+  },
+  {
+   "tag": 16,
+   "format": "video",
+   "serie": "Denkfehler",
+   "serie_nummer": 9,
+   "hook": "„Halt dir alle Optionen offen“ kostet dich Jahre.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] „Halt dir alle Optionen offen“ kostet dich Jahre. Gerade weil es so klug klingt. Nicht festlegen, nichts verbauen, abwarten, was noch kommt. [thoughtful] Das Problem ist: Wer nichts ernsthaft anfängt, schiebt jeden Plan ein Stück weiter. Ein Semester, ein Jahr, noch ein Jahr. Und im ehrlichen Rückblick hast du viele Möglichkeiten behalten … und wenig davon erlebt. Offenhalten ist auch eine Entscheidung – nur eben gegen das Erleben. [curious] Welche Option hältst du dir schon zu lange offen?",
+   "folien": [],
+   "tiktok_text": "Optionen offenhalten ist auch eine Entscheidung. Entscheidungen, Karriere.",
+   "tiktok_hashtags": [
+    "#entscheidungen",
+    "#karriere",
+    "#fomo"
+   ],
+   "instagram_caption": "Sich nicht festzulegen fühlt sich nach Freiheit an. Am Ende bleiben aber oft viele Möglichkeiten und wenig Erlebtes. Freiheit oder Ausrede – was ist Offenhalten für dich?",
+   "instagram_hashtags": [
+    "#entscheidungen",
+    "#karriere",
+    "#fomo",
+    "#mindset"
+   ],
+   "youtube_titel": "„Halt dir alle Optionen offen“ kostet dich Jahre",
+   "youtube_beschreibung": "Warum Offenhalten oft heißt, wenig zu erleben. Denkfehler aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Ist Offenhalten Freiheit oder Angst vor der falschen Wahl?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-038",
+   "pruefung": 83,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T16-V",
+   "wortzahl": 74,
+   "freigegeben": true
+  },
+  {
+   "tag": 17,
+   "format": "karussell",
+   "serie": "Ein Satz",
+   "serie_nummer": 3,
+   "hook": "Mehr ist möglich, aber nicht notwendig.",
+   "stil": "himmel",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Mehr ist möglich, aber nicht notwendig.",
+    "Mehr Gehalt, mehr Gewicht auf der Hantel, mehr Follower. Alles darf kommen. Was davon brauchst du wirklich für ein gutes Leben?",
+    "Aus: Der eigene Ratgeber"
+   ],
+   "tiktok_text": "Mehr darf kommen. Muss es aber nicht. Erfolg, Ziele.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#ziele",
+    "#genug"
+   ],
+   "instagram_caption": "Mehr ist fast immer möglich. Für ein gutes Leben ist es aber keine Voraussetzung. Was davon würdest du wirklich vermissen?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#genug",
+    "#ziele",
+    "#mindset"
+   ],
+   "youtube_titel": "Mehr ist möglich, aber nicht notwendig",
+   "youtube_beschreibung": "Ein Satz aus „Der eigene Ratgeber“ über das Genug.",
+   "angepinnter_kommentar": "Braucht man immer mehr, um weiterzukommen?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-139",
+   "pruefung": 80,
+   "id": "C02-T17-K",
+   "wortzahl": 31,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 17,
+   "format": "video",
+   "serie": "Eine Frage",
+   "serie_nummer": 5,
+   "hook": "Ein Plan ist geplatzt. Nicht dein Leben.",
+   "stil": "himmel",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Ein Plan ist geplatzt. Nicht dein Leben. Auch wenn es sich gerade genau so anfühlt. [thoughtful] Nach einem Rückschlag hilft die genauere Frage. War es der Zeitplan, eine Etappe, ein bestimmtes Ergebnis … oder wirklich alles, was dir wichtig ist? [curious] Was genau ist bei deinem letzten Rückschlag schiefgelaufen?",
+   "folien": [],
+   "tiktok_text": "Ein Rückschlag ist selten alles. Motivation, Ziele.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#ziele",
+    "#rueckschlag"
+   ],
+   "instagram_caption": "Nach einem Rückschlag fühlt sich schnell alles falsch an. Die genauere Frage hilft: Was ist eigentlich nicht gelungen? Was war dein letzter Rückschlag – und was davon war wirklich kaputt?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#rueckschlag",
+    "#ziele",
+    "#mindset"
+   ],
+   "youtube_titel": "Ein Plan ist geplatzt. Nicht dein Leben.",
+   "youtube_beschreibung": "Eine Frage, die einen Rückschlag auf seine richtige Größe bringt. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Was war dein größter Rückschlag – und was davon war wirklich verloren?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-147",
+   "pruefung": 82,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T17-V",
+   "wortzahl": 46,
+   "freigegeben": true
+  },
+  {
+   "tag": 18,
+   "format": "video",
+   "serie": "Tiefer",
+   "serie_nummer": 7,
+   "hook": "Gewinnen wollen macht dich schneller müde.",
+   "stil": "tusche",
+   "laenge": "lang",
+   "sprechtext": "[confident] Gewinnen wollen macht dich schneller müde. Besser werden wollen nicht. Zwei Leute fangen im selben Monat mit dem Laufen an. Beide trainieren gleich hart. Die eine will beim Stadtlauf eine bestimmte Zeit schaffen. Die andere will einfach merken, dass sie jede Woche ein Stück weiter kommt. Dann kommt die Erkältung, drei Wochen Pause, die Zeit ist weg. Für die erste ist das Ziel geplatzt. Für die zweite ist es ein neuer Startpunkt. [thoughtful] Die Motivationsforschung unterscheidet genau das. Bei Leistungszielen willst du etwas vorweisen. Bei Lernzielen willst du besser werden. Wer aufs eigene Besserwerden ausgerichtet ist, zeigt mehr Ausdauer und mehr Interesse an der Sache. Und nach Rückschlägen bleibt er stabiler. Das heißt nicht, dass du keine Bestzeit wollen darfst. Klare Ziele helfen sogar. [warmly] Aber wenn dein Antrieb am Besserwerden hängt, kann ihn ein schlechter Tag nicht wegnehmen. Dann ist jeder Lauf ein Zeichen, dass du weiterkommst – egal, was die Uhr sagt. [curious] Willst du gerade besser werden … oder etwas vorweisen?",
+   "folien": [],
+   "tiktok_text": "Besser werden schlägt gewinnen wollen – auf Dauer. Motivation, Training.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#training",
+    "#disziplin"
+   ],
+   "instagram_caption": "Wer besser werden will, hält länger durch als wer etwas vorweisen will. Das zeigt die Motivationsforschung. Was treibt dich gerade an – die Zahl oder der Fortschritt?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#training",
+    "#disziplin",
+    "#ziele",
+    "#psychologie"
+   ],
+   "youtube_titel": "Gewinnen wollen macht dich schneller müde",
+   "youtube_beschreibung": "Lernziele und Leistungsziele: warum Besserwerden länger trägt. Quelle: Elliot & Church (1997). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Besser werden oder gewinnen – was treibt dich wirklich?",
+   "buchhinweis": true,
+   "quelle": "Elliot, A. J., & Church, M. A. (1997). A hierarchical model of approach and avoidance achievement motivation",
+   "einheit_id": "E-206",
+   "pruefung": 86,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "endkarte": true,
+   "id": "C02-T18-V",
+   "wortzahl": 159,
+   "freigegeben": true
+  },
+  {
+   "tag": 19,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 14,
+   "hook": "Stolz, der nur am Ziel hängt, ist geliehen.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] Stolz, der nur am Ziel hängt, ist geliehen. Und jeder Rückschlag fordert ihn zurück. Du hast dir gesagt: Wenn ich befördert werde, darf ich stolz sein. Dann dauert es ein Jahr länger. [thoughtful] Ärgerlich, klar. Aber weil alles an dieser einen Beförderung hängt, wirkt plötzlich alles andere wertlos. Der Job, das Training, die letzten Jahre. So wird aus einer Verzögerung ein Urteil über dein ganzes Leben. [warmly] Stolz darfst du auch auf den Weg sein. [curious] Woran hängt dein Stolz gerade?",
+   "folien": [],
+   "tiktok_text": "Stolz, der nur am Ziel hängt, ist geliehen. Erfolg, Ziele.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#ziele",
+    "#stolz"
+   ],
+   "instagram_caption": "Wenn aller Stolz an einer einzigen Beförderung oder einem Ziel hängt, wird jeder Rückschlag zum Urteil über alles. Stolz darf auch am Weg hängen. Worauf bist du heute schon stolz?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#ziele",
+    "#stolz",
+    "#mindset"
+   ],
+   "youtube_titel": "Stolz, der nur am Ziel hängt, ist geliehen",
+   "youtube_beschreibung": "Warum ein Rückschlag alles entwerten kann, wenn der Stolz an einem einzigen Ziel hängt. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Darf man stolz sein, bevor das Ziel erreicht ist?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-146",
+   "pruefung": 83,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T19-V",
+   "wortzahl": 78,
+   "freigegeben": true
+  },
+  {
+   "tag": 20,
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 6,
+   "hook": "Wer härter wirkt, wird mehr gelobt. Auch ohne Nutzen.",
+   "stil": "klar",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Wer härter wirkt, wird mehr gelobt. Auch ohne Nutzen.",
+    "Die Annahme: Wir loben Ergebnisse. Wer mehr erreicht, bekommt mehr Anerkennung.",
+    "Der Befund: In acht Studien galten Menschen, die mehr Aufwand zeigten, als moralisch besser.",
+    "Auch dann, wenn der zusätzliche Aufwand nichts zusätzlich gebracht hat. Sie bekamen mehr Anerkennung und sogar mehr Geld.",
+    "Der Effekt zeigte sich in den USA, in Südkorea und in Frankreich.",
+    "Die Grenze: Die Studien zeigen, wie wir urteilen. Nicht, dass Mühe schlecht ist.",
+    "Für dich heißt das: Wer seinen Erfolg härter erzählt, erzählt ihn so, wie er belohnt wird. Zählt bei dir das Ergebnis oder die Härte?",
+    "Quelle: Celniker, Gregory, Koo, Piff, Ditto & Shariff (2023), The moralization of effort"
+   ],
+   "tiktok_text": "Härte wird belohnt – auch wenn sie nichts bringt. Erfolg, Psychologie.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#psychologie",
+    "#hustle"
+   ],
+   "instagram_caption": "Wer mehr Aufwand zeigt, wird als besserer Mensch gesehen – auch ohne zusätzlichen Nutzen. Das erklärt, warum Erfolgsgeschichten so gern hart erzählt werden. Zählt für dich das Ergebnis oder die Mühe?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#psychologie",
+    "#forschung",
+    "#hustle",
+    "#mindset"
+   ],
+   "youtube_titel": "Warum wir Härte mehr loben als Ergebnisse",
+   "youtube_beschreibung": "Acht Studien zur moralischen Aufwertung von Anstrengung. Quelle: Celniker et al. (2023).",
+   "angepinnter_kommentar": "Ist jemand, der sich mehr quält, mehr Respekt wert?",
+   "buchhinweis": true,
+   "quelle": "Celniker, J. B., Gregory, A., Koo, H. J., Piff, P. K., Ditto, P. H., & Shariff, A. F. (2023). The moralization of effort",
+   "einheit_id": "E-209",
+   "pruefung": 85,
+   "id": "C02-T20-K",
+   "wortzahl": 114,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 20,
+   "format": "video",
+   "serie": "Zitat",
+   "serie_nummer": 3,
+   "hook": "„Was wir erst lernen müssen, bevor wir es tun können, das lernen wir, indem wir es tun.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Was wir erst lernen müssen, bevor wir es tun können, das lernen wir, indem wir es tun.“ [thoughtful] Das steht bei Aristoteles, in seiner Ethik. Klingt verdreht, ist aber ganz praktisch. Niemand lernt Schwimmen am Beckenrand. Und niemand weiß vorher, wie sich das Nebenprojekt oder der neue Job wirklich anfühlt. [warmly] Selbst ein Versuch, der schiefgeht, gehört danach zu deinem Wissen. Vorher hattest du nur eine Vermutung. [curious] Was lernst du gerade nur im Kopf?",
+   "folien": [],
+   "tiktok_text": "Schwimmen lernt keiner am Beckenrand. Motivation, Lernen.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#lernen",
+    "#philosophie"
+   ],
+   "instagram_caption": "Aristoteles: Was wir erst lernen müssen, bevor wir es tun können, das lernen wir, indem wir es tun. Auch ein Versuch, der schiefgeht, ist danach Wissen. Was lernst du gerade nur im Kopf?",
+   "instagram_hashtags": [
+    "#aristoteles",
+    "#philosophie",
+    "#zitate",
+    "#lernen",
+    "#mindset"
+   ],
+   "youtube_titel": "Aristoteles: Wir lernen, indem wir es tun",
+   "youtube_beschreibung": "Ein Satz aus der Nikomachischen Ethik und warum auch ein gescheiterter Versuch echtes Wissen bringt. Mit einem Gedanken aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Was hast du erst verstanden, als du es gemacht hast?",
+   "buchhinweis": false,
+   "quelle": "Aristoteles: Nikomachische Ethik, Buch II, 1 (1103a), übersetzt",
+   "einheit_id": "E-077",
+   "pruefung": 84,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Aristoteles",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T20-V",
+   "wortzahl": 72,
+   "freigegeben": true
+  },
+  {
+   "tag": 21,
+   "format": "video",
+   "serie": "Denkfehler",
+   "serie_nummer": 10,
+   "hook": "„Denk einfach nicht dran“ macht es schlimmer.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] „Denk einfach nicht dran“ macht es schlimmer. Und das ist sogar gemessen worden. In einem Experiment sollten Leute fünf Minuten lang nicht an einen weißen Bären denken. [thoughtful] Danach dachten sie häufiger an ihn als die, die von Anfang an an ihn denken durften. Mit dem Gedanken, den du nachts wegdrückst, ist es ähnlich. Je mehr du kämpfst, desto mehr beschäftigt er dich. Ansehen statt wegdrücken ist nicht weich – es ist die stärkere Strategie. [curious] Welchen Gedanken drückst du gerade weg?",
+   "folien": [],
+   "tiktok_text": "Wegdrücken macht Gedanken lauter. Psychologie, Mindset.",
+   "tiktok_hashtags": [
+    "#psychologie",
+    "#mindset",
+    "#gedanken"
+   ],
+   "instagram_caption": "Ein klassisches Experiment zeigt: Wer einen Gedanken unterdrückt, denkt danach häufiger an ihn. Ansehen statt wegdrücken wirkt besser. Hast du das schon mal bei dir bemerkt?",
+   "instagram_hashtags": [
+    "#psychologie",
+    "#mindset",
+    "#gedanken",
+    "#kopfkino"
+   ],
+   "youtube_titel": "„Denk einfach nicht dran“ macht es schlimmer",
+   "youtube_beschreibung": "Das Experiment mit dem weißen Bären und warum Unterdrücken Gedanken verstärkt. Quellen: Wegner et al. (1987); Wenzlaff & Wegner (2000). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Gedanken wegdrücken oder ansehen – was funktioniert bei dir?",
+   "buchhinweis": false,
+   "quelle": "Wegner, D. M., Schneider, D. J., Carter, S. R., & White, T. L. (1987). Paradoxical effects of thought suppression; Wenzlaff, R. M., & Wegner, D. M. (2000). Thought suppression",
+   "einheit_id": "E-221",
+   "pruefung": 87,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T21-V",
+   "wortzahl": 79,
+   "freigegeben": true
+  },
+  {
+   "tag": 22,
+   "format": "video",
+   "serie": "Zitat",
+   "serie_nummer": 4,
+   "hook": "„Nicht wer wenig hat, sondern wer mehr begehrt, ist arm.“",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Nicht wer wenig hat, sondern wer mehr begehrt, ist arm.“ [thoughtful] Das schrieb Seneca – ein Mann, der selbst sehr reich war. Er meinte nicht, dass Wünsche schlecht sind. Er meinte den Maßstab, der mit jedem Blick auf andere steigt. Hat sich dein Leben verändert, darfst du neu festlegen, was genug ist. Hast du nur gesehen, was jemand anderes hat, setzt gerade er deinen Maßstab. [curious] Wer hat deinen zuletzt verschoben?",
+   "folien": [],
+   "tiktok_text": "Arm ist, wer immer mehr will? Geld, Vergleich.",
+   "tiktok_hashtags": [
+    "#geld",
+    "#vergleich",
+    "#seneca"
+   ],
+   "instagram_caption": "Seneca war selbst reich – und schrieb trotzdem: Nicht wer wenig hat, sondern wer mehr begehrt, ist arm. Wer setzt eigentlich deinen Maßstab?",
+   "instagram_hashtags": [
+    "#seneca",
+    "#stoizismus",
+    "#zitate",
+    "#genug",
+    "#vergleich"
+   ],
+   "youtube_titel": "Seneca: Arm ist, wer mehr begehrt",
+   "youtube_beschreibung": "Ein Satz von Seneca über Reichtum und Maßstab. Mit einem Gedanken aus „Der eigene Ratgeber“ zum eigenen Genug. Keine Finanzberatung.",
+   "angepinnter_kommentar": "Kann man reich sein und trotzdem arm?",
+   "buchhinweis": false,
+   "quelle": "Seneca: Epistulae morales ad Lucilium 2,6 („Non qui parum habet, sed qui plus cupit, pauper est“), übersetzt",
+   "einheit_id": "E-133",
+   "pruefung": 86,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Seneca",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T22-V",
+   "wortzahl": 68,
+   "freigegeben": true
+  },
+  {
+   "tag": 23,
+   "format": "karussell",
+   "serie": "Ein Satz",
+   "serie_nummer": 4,
+   "hook": "Du darfst dir wünschen, dass noch viel kommt. Und du darfst das, was heute schon gut ist, gelten lassen.",
+   "stil": "himmel",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Du darfst dir wünschen, dass noch viel kommt. Und du darfst das, was heute schon gut ist, gelten lassen.",
+    "Training erledigt. Job läuft. Und im Kopf nur: reicht noch nicht. Was ist heute schon gut – und warum zählst du es nicht?",
+    "Aus: Der eigene Ratgeber"
+   ],
+   "tiktok_text": "Viel wollen und trotzdem zufrieden sein? Geht. Ziele, Motivation.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#motivation",
+    "#zufriedenheit"
+   ],
+   "instagram_caption": "Wünsche und Zufriedenheit schließen sich nicht aus. Du darfst weiterwollen und das Gute von heute trotzdem gelten lassen. Was ist heute schon gut bei dir?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#zufriedenheit",
+    "#motivation",
+    "#mindset"
+   ],
+   "youtube_titel": "Viel wollen und trotzdem zufrieden sein",
+   "youtube_beschreibung": "Ein Satz aus „Der eigene Ratgeber“ über Wünsche und das Gute von heute.",
+   "angepinnter_kommentar": "Kann man ehrgeizig und zufrieden zugleich sein?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-180",
+   "pruefung": 80,
+   "id": "C02-T23-K",
+   "wortzahl": 46,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 23,
+   "format": "video",
+   "serie": "Sprichwort",
+   "serie_nummer": 2,
+   "hook": "„Das Gras auf der anderen Seite ist immer grüner.“",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Das Gras auf der anderen Seite ist immer grüner.“ [confident] Und manchmal ist es das wirklich – für die, die dort stehen. Die Freundin mit dem Onlineshop, der Kollege im Ausland. Jedes Mal fragst du dich: Sollte ich das auch machen? [thoughtful] Aber ein interessanter Weg muss nicht deiner werden. Dass jemand anders dort glücklich ist, macht ihn für dich noch nicht notwendig. [warmly] Du darfst Wege vorbeiziehen lassen. [curious] Welcher fremde Rasen lenkt dich gerade ab?",
+   "folien": [],
+   "tiktok_text": "Ihr Rasen ist nicht dein Garten. Erfolg, Vergleich.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#vergleich",
+    "#karriere"
+   ],
+   "instagram_caption": "Das Gras auf der anderen Seite ist immer grüner – manchmal sogar wirklich. Aber ein Weg, der andere glücklich macht, muss nicht deiner werden. Welchen Weg hast du bewusst vorbeiziehen lassen?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#vergleich",
+    "#karriere",
+    "#mindset"
+   ],
+   "youtube_titel": "Das Gras auf der anderen Seite ist immer grüner",
+   "youtube_beschreibung": "Ein bekanntes Sprichwort und warum der Weg eines anderen nicht deiner werden muss. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Inspiration oder Druck – was macht der Erfolg anderer mit dir?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-037",
+   "pruefung": 83,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "zitat_von": "Sprichwort",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T23-V",
+   "wortzahl": 72,
+   "freigegeben": true
+  },
+  {
+   "tag": 24,
+   "format": "video",
+   "serie": "Zitat",
+   "serie_nummer": 5,
+   "hook": "„Nicht die Dinge selbst beunruhigen die Menschen, sondern ihre Urteile über die Dinge.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Nicht die Dinge selbst beunruhigen die Menschen, sondern ihre Urteile über die Dinge.“ [thoughtful] Das lehrte Epiktet, ein Philosoph, der als Sklave geboren wurde. Ein Beispiel von heute: Du kommst abends nach Hause und denkst, heute wieder nichts geschafft. Der Satz ist schnell da … und fast nie wahr. Frag genauer: Was hattest du vor, was ist liegen geblieben, was hast du trotzdem getan? [warmly] Genauer hinsehen heißt nicht schönreden. [curious] Was war heute besser, als dein Urteil sagt?",
+   "folien": [],
+   "tiktok_text": "„Heute nichts geschafft“ stimmt fast nie. Produktivität, Mindset.",
+   "tiktok_hashtags": [
+    "#produktivitaet",
+    "#mindset",
+    "#stoizismus"
+   ],
+   "instagram_caption": "Epiktet: Nicht die Dinge beunruhigen uns, sondern unsere Urteile über sie. Das gilt auch für den Satz „Heute nichts geschafft“. Was war heute besser, als dein Urteil sagt?",
+   "instagram_hashtags": [
+    "#epiktet",
+    "#stoizismus",
+    "#zitate",
+    "#mindset",
+    "#produktivitaet"
+   ],
+   "youtube_titel": "Epiktet: Nicht die Dinge beunruhigen uns",
+   "youtube_beschreibung": "Ein Satz von Epiktet und warum „Heute habe ich nichts geschafft“ fast nie stimmt. Mit einem Gedanken aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Ist der Tag schlecht – oder nur dein Urteil darüber?",
+   "buchhinweis": false,
+   "quelle": "Epiktet: Handbüchlein der Moral (Encheiridion), Kap. 5, übersetzt",
+   "einheit_id": "E-170",
+   "pruefung": 85,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Epiktet",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T24-V",
+   "wortzahl": 75,
+   "freigegeben": true
+  },
+  {
+   "tag": 25,
+   "format": "video",
+   "serie": "Tiefer",
+   "serie_nummer": 8,
+   "hook": "Dein Gehalt schrumpft, wenn andere mehr verdienen.",
+   "stil": "tusche",
+   "laenge": "lang",
+   "sprechtext": "[confident] Dein Gehalt schrumpft, wenn andere mehr verdienen. Auch wenn auf deinem Konto kein Euro fehlt. Vorgestern warst du noch zufrieden. Dann erzählt ein Freund beim Essen, was er im neuen Job bekommt. Dein Gehalt ist genau dasselbe wie vorher. Aber es fühlt sich plötzlich nach weniger an. Oder du scrollst abends durch Urlaube, Autos und Wohnungen. Danach wirkt dein eigenes Leben irgendwie kleiner. [thoughtful] Der Ökonom Erzo Luttmer hat 2005 Daten aus den USA ausgewertet. Bei gleichem eigenem Einkommen waren Menschen weniger zufrieden, wenn ihre Nachbarschaft mehr verdiente. Der Maßstab verschiebt sich also nicht nur im Gefühl. Er verschiebt sich messbar mit dem, was du siehst. Vergleichen wirst du dich trotzdem, das macht jeder. Das lässt sich nicht abstellen, und das musst du auch nicht. [warmly] Aber wenn du vorher weißt, was für dich genug ist, hat ein fremdes Gehalt weniger Macht. Dann setzt du deinen Maßstab selbst. Und der wandert nicht mit jedem neuen Bild mit. [curious] Wessen Leben hat deinen Maßstab zuletzt verschoben?",
+   "folien": [],
+   "tiktok_text": "Gleiches Geld, weniger zufrieden – wegen der anderen. Geld, Vergleich.",
+   "tiktok_hashtags": [
+    "#geld",
+    "#vergleich",
+    "#psychologie"
+   ],
+   "instagram_caption": "Eine Studie zeigt: Bei gleichem Einkommen sinkt die Zufriedenheit, wenn die Umgebung mehr verdient. Der Maßstab wandert mit dem, was du siehst. Wer verschiebt gerade deinen?",
+   "instagram_hashtags": [
+    "#geld",
+    "#vergleich",
+    "#psychologie",
+    "#zufriedenheit",
+    "#mindset"
+   ],
+   "youtube_titel": "Warum dein Gehalt sich kleiner anfühlt",
+   "youtube_beschreibung": "Relatives Einkommen und Zufriedenheit: was eine Studie über Nachbarn und Gehalt zeigt. Keine Finanzberatung. Quelle: Luttmer (2005). Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Kann man zufrieden sein, wenn alle um einen herum mehr haben?",
+   "buchhinweis": true,
+   "quelle": "Luttmer, E. F. P. (2005). Neighbors as negatives: Relative earnings and well-being",
+   "einheit_id": "E-245",
+   "pruefung": 86,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "endkarte": true,
+   "id": "C02-T25-V",
+   "wortzahl": 162,
+   "freigegeben": true
+  },
+  {
+   "tag": 26,
+   "format": "karussell",
+   "serie": "Studie sagt",
+   "serie_nummer": 7,
+   "hook": "Nicht das Ziel macht gute Tage. Der Fortschritt schon.",
+   "stil": "klar",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Nicht das Ziel macht gute Tage. Der Fortschritt schon.",
+    "Die Annahme: Gute Laune bei der Arbeit kommt vom großen Erfolg – Beförderung, Abschluss, Bonus.",
+    "Die Untersuchung: Forschende werteten mehrere Tausend Tagebucheinträge von mehreren Hundert Berufstätigen aus.",
+    "Der Befund: Der stärkste einzelne Treiber für gute Tage war Fortschritt in einer Arbeit, die als bedeutsam erlebt wurde. Auch bei kleinen Schritten.",
+    "Die Grenze: Es geht um Arbeit, die einem etwas bedeutet. Und um das Erleben im Alltag, nicht um Erfolg auf dem Papier.",
+    "Für dich heißt das: Das gute Gefühl entsteht unterwegs, nicht erst am Ende. Welcher kleine Schritt hat dir diese Woche gutgetan?",
+    "Quelle: Amabile & Kramer (2011), The Progress Principle"
+   ],
+   "tiktok_text": "Kleine Fortschritte schlagen große Ziele – fürs Gefühl. Motivation, Arbeit.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#arbeit",
+    "#fortschritt"
+   ],
+   "instagram_caption": "Tausende Tagebucheinträge zeigen: Gute Arbeitstage kommen vor allem vom Fortschritt, auch vom kleinen. Das Gefühl entsteht unterwegs. Welcher kleine Schritt zählt bei dir diese Woche?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#fortschritt",
+    "#arbeit",
+    "#forschung",
+    "#mindset"
+   ],
+   "youtube_titel": "Was gute Arbeitstage wirklich ausmacht",
+   "youtube_beschreibung": "Das Fortschrittsprinzip aus Tausenden Tagebucheinträgen. Quelle: Amabile & Kramer (2011).",
+   "angepinnter_kommentar": "Großer Erfolg oder kleiner Fortschritt – was macht deinen Tag besser?",
+   "buchhinweis": true,
+   "quelle": "Amabile, T. M., & Kramer, S. J. (2011). The Progress Principle",
+   "einheit_id": "E-205",
+   "pruefung": 83,
+   "id": "C02-T26-K",
+   "wortzahl": 110,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 26,
+   "format": "video",
+   "serie": "Klartext",
+   "serie_nummer": 8,
+   "hook": "Du verpasst immer etwas. Und das ist gut.",
+   "stil": "himmel",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Du verpasst immer etwas. Und das ist gut. Jede Party, jeder Job, jede Stadt, für die du dich entscheidest, heißt Nein zu anderen. [thoughtful] Wenn jedes Nein wie ein verlorenes Leben wirkt, kannst du kein Ja genießen. [warmly] Deine Zeit ist begrenzt. Genau deshalb darf dein Weg andere unbegangen lassen. [curious] Worauf hast du zuletzt gern verzichtet?",
+   "folien": [],
+   "tiktok_text": "FOMO? Verpassen gehört dazu. Entscheidungen, Leben.",
+   "tiktok_hashtags": [
+    "#fomo",
+    "#entscheidungen",
+    "#leben"
+   ],
+   "instagram_caption": "Jedes Ja ist ein Nein zu etwas anderem. Wer jedes Nein als Verlust sieht, kann kein Ja genießen. Worauf hast du zuletzt gern verzichtet?",
+   "instagram_hashtags": [
+    "#fomo",
+    "#entscheidungen",
+    "#leben",
+    "#mindset"
+   ],
+   "youtube_titel": "Du verpasst immer etwas. Und das ist gut.",
+   "youtube_beschreibung": "Warum jedes Ja ein Nein ist – und das in Ordnung ist. Klartext aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "FOMO: Antrieb oder Bremse?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-036",
+   "pruefung": 82,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T26-V",
+   "wortzahl": 54,
+   "freigegeben": true
+  },
+  {
+   "tag": 27,
+   "format": "video",
+   "serie": "Denkfehler",
+   "serie_nummer": 11,
+   "hook": "„Mehr geht immer“ stimmt. Das ist die Falle.",
+   "stil": "tusche",
+   "laenge": "normal",
+   "sprechtext": "[confident] „Mehr geht immer“ stimmt. Das ist die Falle. Denn dann reicht nie etwas. Die Gehaltserhöhung freut dich, klar. Aber war das alte Gehalt deshalb plötzlich zu wenig? [thoughtful] Ein klares Genug verbietet dir kein Mehr. Mehr darf kommen und dich freuen. Es bekommt nur nicht das Recht, alles davor rückwirkend für ungenügend zu erklären. [warmly] Du kannst weiterwollen und trotzdem gelten lassen, was schon da ist. [curious] In welchem Bereich ist bei dir eigentlich schon genug?",
+   "folien": [],
+   "tiktok_text": "Mehr geht immer. Reicht deshalb nie etwas? Erfolg, Geld.",
+   "tiktok_hashtags": [
+    "#erfolg",
+    "#genug",
+    "#motivation"
+   ],
+   "instagram_caption": "Mehr ist fast immer möglich. Das heißt aber nicht, dass das Erreichte nicht genügt. Ein Genug bremst keinen Ehrgeiz. Siehst du das so oder ist das zu bequem?",
+   "instagram_hashtags": [
+    "#erfolg",
+    "#genug",
+    "#motivation",
+    "#mindset"
+   ],
+   "youtube_titel": "„Mehr geht immer“ – genau das ist die Falle",
+   "youtube_beschreibung": "Warum ein klares Genug kein Mehr verbietet. Denkfehler aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Bremst ein festes Genug den Ehrgeiz – ja oder nein?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-128",
+   "pruefung": 83,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T27-V",
+   "wortzahl": 73,
+   "freigegeben": true
+  },
+  {
+   "tag": 28,
+   "format": "video",
+   "serie": "Innehalten",
+   "serie_nummer": 3,
+   "hook": "„Lass zwischen Ankommen und Weiterwollen einen Moment entstehen, in dem das Erreichte zählen darf.“",
+   "stil": "himmel",
+   "laenge": "normal",
+   "sprechtext": "[serious] „Lass zwischen Ankommen und Weiterwollen einen Moment entstehen, in dem das Erreichte zählen darf.“ [thoughtful] Kennst du das? Prüfung bestanden, Bestzeit geschafft, Projekt abgegeben … und im selben Moment fragst du: Und jetzt? Dieser kurze Halt macht dich nicht langsamer. [warmly] Er sorgt nur dafür, dass du überhaupt merkst, dass du angekommen bist. [curious] Was hast du zuletzt geschafft, ohne es zu feiern?",
+   "folien": [],
+   "tiktok_text": "Ankommen darf kurz dauern. Ziele, Erfolg.",
+   "tiktok_hashtags": [
+    "#ziele",
+    "#erfolg",
+    "#motivation"
+   ],
+   "instagram_caption": "Ein Satz aus dem Buch: Lass zwischen Ankommen und Weiterwollen einen Moment entstehen, in dem das Erreichte zählen darf. Was hast du zuletzt geschafft, ohne es zu feiern?",
+   "instagram_hashtags": [
+    "#ziele",
+    "#erfolg",
+    "#motivation",
+    "#mindset"
+   ],
+   "youtube_titel": "Zwischen Ankommen und Weiterwollen",
+   "youtube_beschreibung": "Ein Satz zum Innehalten aus „Der eigene Ratgeber“ über den Moment nach einem erreichten Ziel.",
+   "angepinnter_kommentar": "Erfolge feiern oder direkt weitermachen – was machst du?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-138",
+   "pruefung": 81,
+   "plattformen": [
+    "youtube",
+    "instagram"
+   ],
+   "zitat_von": "Der eigene Ratgeber",
+   "zitat_lauter": true,
+   "endkarte": false,
+   "id": "C02-T28-V",
+   "wortzahl": 59,
+   "freigegeben": true
+  },
+  {
+   "tag": 29,
+   "format": "karussell",
+   "serie": "Ein Satz",
+   "serie_nummer": 5,
+   "hook": "Ein Gedanke verändert dein Leben dort, wo du beginnst, nach ihm zu handeln.",
+   "stil": "himmel",
+   "laenge": "karussell",
+   "sprechtext": "",
+   "folien": [
+    "Ein Gedanke verändert dein Leben dort, wo du beginnst, nach ihm zu handeln.",
+    "Gespeichert, geliked, genickt. Welchen Gedanken hast du dieses Jahr wirklich umgesetzt?",
+    "Aus: Der eigene Ratgeber"
+   ],
+   "tiktok_text": "Ein Gedanke ändert nichts, bis du handelst. Motivation, Disziplin.",
+   "tiktok_hashtags": [
+    "#motivation",
+    "#disziplin",
+    "#handeln"
+   ],
+   "instagram_caption": "Ein guter Gedanke allein verändert nichts. Er wirkt erst da, wo du nach ihm handelst. Welchen hast du dieses Jahr umgesetzt?",
+   "instagram_hashtags": [
+    "#motivation",
+    "#handeln",
+    "#disziplin",
+    "#mindset"
+   ],
+   "youtube_titel": "Ein Gedanke wirkt erst, wenn du handelst",
+   "youtube_beschreibung": "Ein Satz aus „Der eigene Ratgeber“ über den Schritt vom Wissen zum Tun.",
+   "angepinnter_kommentar": "Was hast du zuletzt nicht nur gedacht, sondern gemacht?",
+   "buchhinweis": true,
+   "quelle": "",
+   "einheit_id": "E-083",
+   "pruefung": 81,
+   "id": "C02-T29-K",
+   "wortzahl": 28,
+   "freigegeben": true,
+   "plattformen": [
+    "instagram"
+   ]
+  },
+  {
+   "tag": 29,
+   "format": "video",
+   "serie": "Eine Frage",
+   "serie_nummer": 6,
+   "hook": "Großer Titel, kaum Freizeit. Willst du das?",
+   "stil": "tusche",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Großer Titel, kaum Freizeit. Willst du das? Vielleicht ja – aber hast du dich das schon mal ehrlich gefragt? [thoughtful] Geh einen Schritt zurück und frag: Was willst du an deiner Arbeit eigentlich erleben? Selbst entscheiden, Abende mit Freunden, Geld mit Spielraum … oder einen Titel? [curious] Was steht bei dir ganz oben?",
+   "folien": [],
+   "tiktok_text": "Titel oder Zeit – was willst du wirklich? Karriere, Job.",
+   "tiktok_hashtags": [
+    "#karriere",
+    "#job",
+    "#arbeit"
+   ],
+   "instagram_caption": "Beim Job zählt oft der Titel. Dabei lohnt die Frage, was du an deiner Arbeit eigentlich erleben willst. Freiheit, Zeit, Geld oder Titel – was steht bei dir oben?",
+   "instagram_hashtags": [
+    "#karriere",
+    "#job",
+    "#arbeit",
+    "#mindset"
+   ],
+   "youtube_titel": "Großer Titel, kaum Freizeit – willst du das?",
+   "youtube_beschreibung": "Eine Frage dazu, was du an deiner Arbeit eigentlich erleben willst. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Würdest du einen besseren Titel gegen weniger Freizeit tauschen?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-034",
+   "pruefung": 79,
+   "plattformen": [
+    "tiktok",
+    "instagram",
+    "youtube"
+   ],
+   "endkarte": false,
+   "id": "C02-T29-V",
+   "wortzahl": 49,
+   "freigegeben": true
+  },
+  {
+   "tag": 30,
+   "format": "video",
+   "serie": "Unbequem",
+   "serie_nummer": 15,
+   "hook": "Zählt nur das Ergebnis, wird deine Arbeit unsichtbar.",
+   "stil": "tusche",
+   "laenge": "kurz",
+   "sprechtext": "[confident] Zählt nur das Ergebnis, wird deine Arbeit unsichtbar. Auch die, die wirklich etwas gebracht hat. [thoughtful] Du hast am Projekt gearbeitet, einem Freund geholfen, trainiert … aber abends zählt nur, was noch fehlt. So machst du einen ganzen Tag unsichtbar. [curious] Was hast du diese Woche getan, das in keiner Bilanz auftaucht?",
+   "folien": [],
+   "tiktok_text": "Nicht nur das Ergebnis zählt. Produktivität, Erfolg.",
+   "tiktok_hashtags": [
+    "#produktivitaet",
+    "#erfolg",
+    "#arbeit"
+   ],
+   "instagram_caption": "Wer abends nur das fehlende Ergebnis zählt, übersieht alles, was er getan hat. Was hast du diese Woche geschafft, das niemand sieht?",
+   "instagram_hashtags": [
+    "#produktivitaet",
+    "#erfolg",
+    "#arbeit",
+    "#mindset"
+   ],
+   "youtube_titel": "Wenn nur das Ergebnis zählt, wird Arbeit unsichtbar",
+   "youtube_beschreibung": "Warum der Blick nur aufs fertige Ergebnis die tatsächliche Arbeit verschwinden lässt. Aus „Der eigene Ratgeber“.",
+   "angepinnter_kommentar": "Zählt am Ende nur das Ergebnis?",
+   "buchhinweis": false,
+   "quelle": "",
+   "einheit_id": "E-172",
+   "pruefung": 81,
+   "plattformen": [
+    "tiktok",
+    "instagram"
+   ],
+   "endkarte": false,
+   "id": "C02-T30-V",
+   "wortzahl": 49,
+   "freigegeben": true
+  }
+ ]
+     }
