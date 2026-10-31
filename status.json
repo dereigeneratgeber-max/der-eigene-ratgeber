@@ -416,12 +416,22 @@
   ]
  },
  "C02-T01-V": {
+  "buffer": {
+   "instagram": "6ae5c33ea1145743499c6fc4",
+   "tiktok": "6ae5c33f406ab8a018b1453d",
+   "youtube": "6ae5c33fceb491e585eebfa4"
+  },
+  "fertig": true,
   "gerendert": "2026-10-31T11:25+01:00",
   "medien": [
    "C02-T01-V.mp4"
   ]
  },
  "C02-T02-K": {
+  "buffer": {
+   "instagram": "6ae5c3421891472093c8ba8a"
+  },
+  "fertig": true,
   "gerendert": "2026-10-31T11:25+01:00",
   "medien": [
    "C02-T02-K_01.jpg",
@@ -435,6 +445,11 @@
   ]
  },
  "C02-T02-V": {
+  "buffer": {
+   "instagram": "6ae5c342406ab8a018b146fa",
+   "youtube": "6ae5c343b84259308bcf0419"
+  },
+  "fertig": true,
   "gerendert": "2026-10-31T11:25+01:00",
   "medien": [
    "C02-T02-V.mp4"
