@@ -519,12 +519,21 @@
   ]
  },
  "C02-T07-V": {
+  "buffer": {
+   "instagram": "6aec7679fac32e0e658d1026",
+   "youtube": "6aec767988ae9eea3f742d9c"
+  },
+  "fertig": true,
   "gerendert": "2026-11-05T13:25+01:00",
   "medien": [
    "C02-T07-V.mp4"
   ]
  },
  "C02-T08-K": {
+  "buffer": {
+   "instagram": "6aec767b1c4d995fa9b3098a"
+  },
+  "fertig": true,
   "gerendert": "2026-11-05T13:25+01:00",
   "medien": [
    "C02-T08-K_01.jpg",
