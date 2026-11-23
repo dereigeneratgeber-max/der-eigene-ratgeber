@@ -18,7 +18,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.456Z",
+    "aktualisiert": "2026-11-23T03:22:05.186Z",
     "buffer_id": "6ac086a7713b7277a0aa889d",
     "gesendet": "2026-10-09T16:30:00.000Z",
     "werte": {
@@ -106,7 +106,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.449Z",
+    "aktualisiert": "2026-11-23T03:22:05.242Z",
     "buffer_id": "6abde3b0f245fa4cd53e8de2",
     "gesendet": "2026-10-07T16:30:00.000Z",
     "werte": {
@@ -150,7 +150,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.495Z",
+    "aktualisiert": "2026-11-23T03:22:05.100Z",
     "buffer_id": "6abf34e363de9e09a28c8a1c",
     "gesendet": "2026-10-08T16:30:00.000Z",
     "werte": {
@@ -238,7 +238,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.517Z",
+    "aktualisiert": "2026-11-23T03:22:05.136Z",
     "buffer_id": "6ac1ee9fad7fd83bc51361a3",
     "gesendet": "2026-10-10T16:30:00.000Z",
     "werte": {
@@ -282,7 +282,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.492Z",
+    "aktualisiert": "2026-11-23T03:22:05.158Z",
     "buffer_id": "6ac32b2163761da98b6b44a4",
     "gesendet": "2026-10-11T16:30:00.000Z",
     "werte": {
@@ -326,7 +326,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.499Z",
+    "aktualisiert": "2026-11-23T03:22:05.151Z",
     "buffer_id": "6ac47b2798d02b181e2112e2",
     "gesendet": "2026-10-12T16:30:00.000Z",
     "werte": {
@@ -370,7 +370,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.436Z",
+    "aktualisiert": "2026-11-23T03:22:05.117Z",
     "buffer_id": "6ac5ccc2c22c37a573b77294",
     "gesendet": "2026-10-13T16:30:00.000Z",
     "werte": {
@@ -414,7 +414,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.453Z",
+    "aktualisiert": "2026-11-23T03:22:05.161Z",
     "buffer_id": "6ac71e3c365feab0d73e40cf",
     "gesendet": "2026-10-14T16:30:00.000Z",
     "werte": {
@@ -458,7 +458,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.434Z",
+    "aktualisiert": "2026-11-23T03:22:05.246Z",
     "buffer_id": "6ac86ff804f06b2e8f7aef73",
     "gesendet": "2026-10-15T16:30:00.000Z",
     "werte": {
@@ -502,7 +502,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.511Z",
+    "aktualisiert": "2026-11-23T03:22:05.234Z",
     "buffer_id": "6acb1298bba9419ccb248c8c",
     "gesendet": "2026-10-16T16:30:00.000Z",
     "werte": {
@@ -546,7 +546,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.460Z",
+    "aktualisiert": "2026-11-23T03:22:05.110Z",
     "buffer_id": "6acc64be7db619a2915b0563",
     "gesendet": "2026-10-17T16:30:00.000Z",
     "werte": {
@@ -590,18 +590,18 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.520Z",
+    "aktualisiert": "2026-11-23T03:22:05.201Z",
     "buffer_id": "6acdb7773d6121df40409231",
     "gesendet": "2026-10-18T16:30:00.000Z",
     "werte": {
      "averageTimeWatched": 2.95,
      "comments": 0,
-     "engagementRate": 3.53,
+     "engagementRate": 3.41,
      "reach": 82,
      "reactions": 3,
      "shares": 0,
      "totalTimeWatched": 4.23,
-     "views": 85
+     "views": 88
     }
    },
    "youtube": {
@@ -634,7 +634,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.428Z",
+    "aktualisiert": "2026-11-23T03:22:05.120Z",
     "buffer_id": "6acf0ad91f3f10bcb7b13b41",
     "gesendet": "2026-10-19T16:30:00.000Z",
     "werte": {
@@ -662,7 +662,7 @@
   },
   "C01-T16-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T00:48:48.248Z",
+    "aktualisiert": "2026-11-23T00:48:56.334Z",
     "buffer_id": "6acf0ada0d20fd15277dd626",
     "gesendet": "2026-10-20T16:30:00.000Z",
     "werte": {
@@ -678,7 +678,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-19T12:45:10.442Z",
+    "aktualisiert": "2026-11-23T03:22:05.113Z",
     "buffer_id": "6acf0ada33507eb5b0eff56c",
     "gesendet": "2026-10-20T16:30:00.000Z",
     "werte": {
@@ -706,7 +706,7 @@
   },
   "C01-T17-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T00:48:48.280Z",
+    "aktualisiert": "2026-11-23T00:48:56.297Z",
     "buffer_id": "6ad05b6ce09e6bdb27e365ff",
     "gesendet": "2026-10-21T16:30:00.000Z",
     "werte": {
@@ -722,7 +722,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-20T04:28:50.724Z",
+    "aktualisiert": "2026-11-23T03:22:05.106Z",
     "buffer_id": "6ad05b6d78f377d888b1517f",
     "gesendet": "2026-10-21T16:30:00.000Z",
     "werte": {
@@ -750,7 +750,7 @@
   },
   "C01-T18-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T00:48:48.247Z",
+    "aktualisiert": "2026-11-23T00:48:56.326Z",
     "buffer_id": "6ad1ad66e991a49db3ca9f32",
     "gesendet": "2026-10-22T16:30:00.000Z",
     "werte": {
@@ -766,7 +766,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-21T03:22:33.581Z",
+    "aktualisiert": "2026-11-23T03:22:05.212Z",
     "buffer_id": "6ad1ad66ee2c696029bd1fdf",
     "gesendet": "2026-10-22T16:30:00.000Z",
     "werte": {
@@ -794,7 +794,7 @@
   },
   "C01-T19-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.321Z",
     "buffer_id": "6ad78ea12a3b888f3d9b1168",
     "gesendet": "2026-10-23T10:30:00.000Z",
     "werte": {
@@ -811,7 +811,7 @@
   },
   "C01-T19-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.344Z",
     "buffer_id": "6ad2fe1e1c7e49ea4c397164",
     "gesendet": "2026-10-23T16:30:00.000Z",
     "werte": {
@@ -827,7 +827,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.148Z",
     "buffer_id": "6ad2fe1e8ac6cfe5442e4741",
     "gesendet": "2026-10-23T16:30:00.000Z",
     "werte": {
@@ -855,7 +855,7 @@
   },
   "C01-T21-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.304Z",
     "buffer_id": "6ad5a308ae173d6e00307f9b",
     "gesendet": "2026-10-25T17:30:00.000Z",
     "werte": {
@@ -871,7 +871,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.069Z",
     "buffer_id": "6ad5a3080a208cb323954791",
     "gesendet": "2026-10-25T17:30:00.000Z",
     "werte": {
@@ -886,7 +886,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.494Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ad5a3098206df0c0fb37911",
     "gesendet": "2026-10-25T17:30:00.000Z",
     "werte": {
@@ -899,7 +899,7 @@
   },
   "C01-T22-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.415Z",
     "buffer_id": "6ad6f33fb81183413db18939",
     "gesendet": "2026-10-26T17:30:00.000Z",
     "werte": {
@@ -915,7 +915,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.224Z",
     "buffer_id": "6ad6f340e9c669def5eda3db",
     "gesendet": "2026-10-26T17:30:00.000Z",
     "werte": {
@@ -930,7 +930,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.494Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ad6f340cba41b01405f62a5",
     "gesendet": "2026-10-26T17:30:00.000Z",
     "werte": {
@@ -943,7 +943,7 @@
   },
   "C01-T23-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.340Z",
     "buffer_id": "6ad844b3a9967de04975675b",
     "gesendet": "2026-10-27T17:30:00.000Z",
     "werte": {
@@ -959,7 +959,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.195Z",
     "buffer_id": "6ad844b3a9967de049756788",
     "gesendet": "2026-10-27T17:30:00.000Z",
     "werte": {
@@ -974,7 +974,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ad844b4aff466fe090053fb",
     "gesendet": "2026-10-27T17:30:00.000Z",
     "werte": {
@@ -987,7 +987,7 @@
   },
   "C01-T24-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.310Z",
     "buffer_id": "6ad99614ecaa6cda042944a6",
     "gesendet": "2026-10-28T17:30:00.000Z",
     "werte": {
@@ -1003,7 +1003,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.205Z",
     "buffer_id": "6ad99615deacf5d2532d70b4",
     "gesendet": "2026-10-28T17:30:00.000Z",
     "werte": {
@@ -1018,7 +1018,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ad99615282deeeeb2cc1f28",
     "gesendet": "2026-10-28T17:30:00.000Z",
     "werte": {
@@ -1031,7 +1031,7 @@
   },
   "C01-T25-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.489Z",
+    "aktualisiert": "2026-11-23T00:48:56.299Z",
     "buffer_id": "6adaec9f8d2197cb2a1853ba",
     "gesendet": "2026-10-29T17:30:00.000Z",
     "werte": {
@@ -1047,7 +1047,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.145Z",
     "buffer_id": "6adaec9f8d2197cb2a1853ff",
     "gesendet": "2026-10-29T17:30:00.000Z",
     "werte": {
@@ -1062,7 +1062,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6adaeca09ef33e7811bbd5be",
     "gesendet": "2026-10-29T17:30:00.000Z",
     "werte": {
@@ -1075,7 +1075,7 @@
   },
   "C01-T26-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.338Z",
     "buffer_id": "6adc382abd33ce99c30731d2",
     "gesendet": "2026-10-30T11:30:00.000Z",
     "werte": {
@@ -1092,7 +1092,7 @@
   },
   "C01-T27-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.389Z",
     "buffer_id": "6add8aa0e4be8a4d868fac60",
     "gesendet": "2026-10-31T17:30:00.000Z",
     "werte": {
@@ -1108,7 +1108,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.143Z",
     "buffer_id": "6add8aa0bd33ce99c356ad83",
     "gesendet": "2026-10-31T17:30:00.000Z",
     "werte": {
@@ -1123,7 +1123,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6add8aa13d5b27036bb7f6af",
     "gesendet": "2026-10-31T17:30:00.000Z",
     "werte": {
@@ -1136,7 +1136,7 @@
   },
   "C01-T28-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.399Z",
     "buffer_id": "6adeddbb0b5343d0700dde56",
     "gesendet": "2026-11-01T17:30:00.000Z",
     "werte": {
@@ -1152,7 +1152,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.133Z",
     "buffer_id": "6adeddbcbd33ce99c3aca196",
     "gesendet": "2026-11-01T17:30:00.000Z",
     "werte": {
@@ -1167,7 +1167,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6adeddbc8b3d437ddc471206",
     "gesendet": "2026-11-01T17:30:00.000Z",
     "werte": {
@@ -1180,7 +1180,7 @@
   },
   "C01-T29-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.353Z",
     "buffer_id": "6ae02e12913aa340c53e7974",
     "gesendet": "2026-11-02T17:30:00.000Z",
     "werte": {
@@ -1196,7 +1196,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.155Z",
     "buffer_id": "6ae02e13e322dad80123e021",
     "gesendet": "2026-11-02T17:30:00.000Z",
     "werte": {
@@ -1211,7 +1211,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae02e13e322dad80123e04c",
     "gesendet": "2026-11-02T17:30:00.000Z",
     "werte": {
@@ -1224,7 +1224,7 @@
   },
   "C01-T30-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.273Z",
     "buffer_id": "6ae181f3204613d2f1432850",
     "gesendet": "2026-11-03T17:30:00.000Z",
     "werte": {
@@ -1240,7 +1240,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.138Z",
     "buffer_id": "6ae181f3b1bf2d292db5dd97",
     "gesendet": "2026-11-03T17:30:00.000Z",
     "werte": {
@@ -1255,7 +1255,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae181f456ec3750d2539f3a",
     "gesendet": "2026-11-03T17:30:00.000Z",
     "werte": {
@@ -1268,7 +1268,7 @@
   },
   "C02-T01-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.295Z",
     "buffer_id": "6ae5c33ea1145743499c6fc4",
     "gesendet": "2026-11-04T17:30:00.000Z",
     "werte": {
@@ -1284,7 +1284,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.216Z",
     "buffer_id": "6ae5c33f406ab8a018b1453d",
     "gesendet": "2026-11-04T17:30:00.000Z",
     "werte": {
@@ -1299,7 +1299,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae5c33fceb491e585eebfa4",
     "gesendet": "2026-11-04T17:30:00.000Z",
     "werte": {
@@ -1312,7 +1312,7 @@
   },
   "C02-T02-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.319Z",
     "buffer_id": "6ae5c3421891472093c8ba8a",
     "gesendet": "2026-11-05T11:30:00.000Z",
     "werte": {
@@ -1329,7 +1329,7 @@
   },
   "C02-T02-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.302Z",
     "buffer_id": "6ae5c342406ab8a018b146fa",
     "gesendet": "2026-11-05T17:30:00.000Z",
     "werte": {
@@ -1345,7 +1345,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae5c343b84259308bcf0419",
     "gesendet": "2026-11-05T17:30:00.000Z",
     "werte": {
@@ -1358,7 +1358,7 @@
   },
   "C02-T03-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.351Z",
     "buffer_id": "6ae720ea21c807e9d5b5babe",
     "gesendet": "2026-11-06T17:30:00.000Z",
     "werte": {
@@ -1374,7 +1374,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.141Z",
     "buffer_id": "6ae720ea21c807e9d5b5baf5",
     "gesendet": "2026-11-06T17:30:00.000Z",
     "werte": {
@@ -1389,7 +1389,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae720ebcf3a3112f3f37bfb",
     "gesendet": "2026-11-06T17:30:00.000Z",
     "werte": {
@@ -1402,7 +1402,7 @@
   },
   "C02-T04-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.300Z",
     "buffer_id": "6ae883605a0b78bb030e3862",
     "gesendet": "2026-11-07T17:30:00.000Z",
     "werte": {
@@ -1418,7 +1418,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6ae88360c5c4672c3e7270ce",
     "gesendet": "2026-11-07T17:30:00.000Z",
     "werte": {
@@ -1431,7 +1431,7 @@
   },
   "C02-T05-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.306Z",
     "buffer_id": "6ae883623911b6a45d4c3dfc",
     "gesendet": "2026-11-08T11:30:00.000Z",
     "werte": {
@@ -1448,7 +1448,7 @@
   },
   "C02-T05-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.324Z",
     "buffer_id": "6ae9ccd747205d2c39980860",
     "gesendet": "2026-11-08T17:30:00.000Z",
     "werte": {
@@ -1464,7 +1464,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.228Z",
     "buffer_id": "6ae9ccde35443b847a0029d3",
     "gesendet": "2026-11-08T17:30:00.000Z",
     "werte": {
@@ -1481,7 +1481,7 @@
   },
   "C02-T06-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.408Z",
     "buffer_id": "6aeb2218e23d13cc15963c13",
     "gesendet": "2026-11-09T17:30:00.000Z",
     "werte": {
@@ -1497,7 +1497,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.129Z",
     "buffer_id": "6aeb2218e23d13cc15963c51",
     "gesendet": "2026-11-09T17:30:00.000Z",
     "werte": {
@@ -1512,7 +1512,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6aeb2219767d9cd363e38dbd",
     "gesendet": "2026-11-09T17:30:00.000Z",
     "werte": {
@@ -1525,7 +1525,7 @@
   },
   "C02-T07-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.316Z",
     "buffer_id": "6aec7679fac32e0e658d1026",
     "gesendet": "2026-11-10T17:30:00.000Z",
     "werte": {
@@ -1541,7 +1541,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6aec767988ae9eea3f742d9c",
     "gesendet": "2026-11-10T17:30:00.000Z",
     "werte": {
@@ -1554,7 +1554,7 @@
   },
   "C02-T08-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.312Z",
     "buffer_id": "6aec767b1c4d995fa9b3098a",
     "gesendet": "2026-11-11T11:30:00.000Z",
     "werte": {
@@ -1571,7 +1571,7 @@
   },
   "C02-T08-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.348Z",
     "buffer_id": "6aedc4440b0f6e64a0b9e298",
     "gesendet": "2026-11-11T17:30:00.000Z",
     "werte": {
@@ -1587,7 +1587,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.190Z",
     "buffer_id": "6aedc4456e5a31ce6b91d893",
     "gesendet": "2026-11-11T17:30:00.000Z",
     "werte": {
@@ -1604,7 +1604,7 @@
   },
   "C02-T09-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.417Z",
     "buffer_id": "6aef07bf229bf05daf45cd53",
     "gesendet": "2026-11-12T17:30:00.000Z",
     "werte": {
@@ -1620,7 +1620,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.209Z",
     "buffer_id": "6aef07c0d6bbae6fa180f846",
     "gesendet": "2026-11-12T17:30:00.000Z",
     "werte": {
@@ -1637,7 +1637,7 @@
   },
   "C02-T10-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.395Z",
     "buffer_id": "6af05b4051492b796e33dbac",
     "gesendet": "2026-11-13T17:30:00.000Z",
     "werte": {
@@ -1653,7 +1653,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.095Z",
     "buffer_id": "6af05b4051492b796e33dc01",
     "gesendet": "2026-11-13T17:30:00.000Z",
     "werte": {
@@ -1670,7 +1670,7 @@
   },
   "C02-T11-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.286Z",
     "buffer_id": "6af1c4344ed9d7a0d3955d53",
     "gesendet": "2026-11-14T11:30:00.000Z",
     "werte": {
@@ -1687,7 +1687,7 @@
   },
   "C02-T11-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.346Z",
     "buffer_id": "6af1c4364ed9d7a0d3955e1c",
     "gesendet": "2026-11-14T17:30:00.000Z",
     "werte": {
@@ -1703,7 +1703,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6af1c43655ccb8ee465d80a7",
     "gesendet": "2026-11-14T17:30:00.000Z",
     "werte": {
@@ -1716,7 +1716,7 @@
   },
   "C02-T12-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.293Z",
     "buffer_id": "6af3119985810493942f91a7",
     "gesendet": "2026-11-15T17:30:00.000Z",
     "werte": {
@@ -1732,7 +1732,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.124Z",
     "buffer_id": "6af311996202102f59bf93a3",
     "gesendet": "2026-11-15T17:30:00.000Z",
     "werte": {
@@ -1749,7 +1749,7 @@
   },
   "C02-T13-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.410Z",
     "buffer_id": "6af45859aedd7b5946264765",
     "gesendet": "2026-11-16T17:30:00.000Z",
     "werte": {
@@ -1765,7 +1765,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.126Z",
     "buffer_id": "6af4585aaedd7b59462647b2",
     "gesendet": "2026-11-16T17:30:00.000Z",
     "werte": {
@@ -1780,7 +1780,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.389Z",
     "buffer_id": "6af4585a2c0a5da53406f687",
     "gesendet": "2026-11-16T17:30:00.000Z",
     "werte": {
@@ -1793,7 +1793,7 @@
   },
   "C02-T14-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.332Z",
     "buffer_id": "6af4585c9494b43fade88391",
     "gesendet": "2026-11-17T11:30:00.000Z",
     "werte": {
@@ -1810,7 +1810,7 @@
   },
   "C02-T14-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.412Z",
     "buffer_id": "6af5b5e2149e47535482ece7",
     "gesendet": "2026-11-17T17:30:00.000Z",
     "werte": {
@@ -1826,7 +1826,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.180Z",
     "buffer_id": "6af5b5e2be882fe76e2274bb",
     "gesendet": "2026-11-17T17:30:00.000Z",
     "werte": {
@@ -1843,7 +1843,7 @@
   },
   "C02-T15-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.423Z",
     "buffer_id": "6af700719a21933ffad43b48",
     "gesendet": "2026-11-18T17:30:00.000Z",
     "werte": {
@@ -1859,7 +1859,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.183Z",
     "buffer_id": "6af700727828e7ae1b0b56eb",
     "gesendet": "2026-11-18T17:30:00.000Z",
     "werte": {
@@ -1874,7 +1874,7 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.388Z",
     "buffer_id": "6af7007266ff9797d8802630",
     "gesendet": "2026-11-18T17:30:00.000Z",
     "werte": {
@@ -1887,7 +1887,7 @@
   },
   "C02-T16-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.329Z",
     "buffer_id": "6af84779d16af15d4d0fe485",
     "gesendet": "2026-11-19T17:30:00.000Z",
     "werte": {
@@ -1903,7 +1903,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.131Z",
     "buffer_id": "6af8477978196a0a975d78bc",
     "gesendet": "2026-11-19T17:30:00.000Z",
     "werte": {
@@ -1918,20 +1918,20 @@
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.388Z",
     "buffer_id": "6af84779d8bd2962e42747c8",
     "gesendet": "2026-11-19T17:30:00.000Z",
     "werte": {
      "comments": 0,
-     "engagementRate": 0.7,
+     "engagementRate": 0.71,
      "reactions": 1,
-     "views": 142
+     "views": 140
     }
    }
   },
   "C02-T17-K": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.327Z",
     "buffer_id": "6af8477abb36d0090908533e",
     "gesendet": "2026-11-20T11:30:00.000Z",
     "werte": {
@@ -1948,7 +1948,7 @@
   },
   "C02-T17-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.488Z",
+    "aktualisiert": "2026-11-23T00:48:56.342Z",
     "buffer_id": "6af99eeb918fe79d2ede6885",
     "gesendet": "2026-11-20T17:30:00.000Z",
     "werte": {
@@ -1964,7 +1964,7 @@
     }
    },
    "tiktok": {
-    "aktualisiert": "2026-11-22T02:23:34.033Z",
+    "aktualisiert": "2026-11-23T03:22:05.238Z",
     "buffer_id": "6af99eebb9a106584ca6b979",
     "gesendet": "2026-11-20T17:30:00.000Z",
     "werte": {
@@ -1981,30 +1981,101 @@
   },
   "C02-T18-V": {
    "instagram": {
-    "aktualisiert": "2026-11-22T01:27:12.487Z",
+    "aktualisiert": "2026-11-23T00:48:56.335Z",
     "buffer_id": "6afafd2d15603179b13a703a",
     "gesendet": "2026-11-21T17:30:00.000Z",
     "werte": {
-     "averageTimeWatched": 6.56,
+     "averageTimeWatched": 4.81,
      "comments": 0,
      "engagementRate": 0,
-     "reach": 19,
+     "reach": 36,
      "reactions": 0,
      "saves": 0,
      "shares": 0,
-     "totalTimeWatched": 2.19,
-     "views": 23
+     "totalTimeWatched": 2.96,
+     "views": 41
     }
    },
    "youtube": {
-    "aktualisiert": "2026-11-22T14:02:21.493Z",
+    "aktualisiert": "2026-11-23T14:23:41.388Z",
     "buffer_id": "6afafd2ef0e0e28df1d0d010",
     "gesendet": "2026-11-21T17:30:00.000Z",
     "werte": {
      "comments": 0,
      "engagementRate": 0,
      "reactions": 0,
-     "views": 2
+     "views": 17
+    }
+   }
+  },
+  "C02-T19-V": {
+   "instagram": {
+    "aktualisiert": "2026-11-23T00:48:56.421Z",
+    "buffer_id": "6afc57c9685aa7614ba4aff0",
+    "gesendet": "2026-11-22T17:30:00.000Z",
+    "werte": {
+     "averageTimeWatched": 0.95,
+     "comments": 0,
+     "engagementRate": 0,
+     "reach": 6,
+     "reactions": 0,
+     "saves": 0,
+     "shares": 0,
+     "totalTimeWatched": 0.09,
+     "views": 6
+    }
+   },
+   "tiktok": {
+    "aktualisiert": "2026-11-23T03:22:05.220Z",
+    "buffer_id": "6afc57c923a8bb6dc9bb87a6",
+    "gesendet": "2026-11-22T17:30:00.000Z",
+    "werte": {
+     "averageTimeWatched": 0,
+     "comments": 0,
+     "engagementRate": 0,
+     "reach": 0,
+     "reactions": 0,
+     "shares": 0,
+     "totalTimeWatched": 0,
+     "views": 0
+    }
+   },
+   "youtube": {
+    "aktualisiert": "2026-11-23T14:23:41.388Z",
+    "buffer_id": "6afc57ca36ec401176a82d69",
+    "gesendet": "2026-11-22T17:30:00.000Z",
+    "werte": {
+     "comments": 0,
+     "engagementRate": 0,
+     "reactions": 0,
+     "views": 74
+    }
+   }
+  },
+  "C02-T20-K": {
+   "instagram": {
+    "aktualisiert": "2026-11-17T13:34:03.738Z",
+    "buffer_id": "6afc57cb36ec401176a82e35",
+    "gesendet": "2026-11-23T11:30:00.000Z",
+    "werte": {}
+   }
+  },
+  "C02-T20-V": {
+   "instagram": {
+    "aktualisiert": "2026-11-18T13:10:17.521Z",
+    "buffer_id": "6afda3b91c55ed7dd8016c6e",
+    "gesendet": "2026-11-23T17:30:00.000Z",
+    "werte": {}
+   },
+   "youtube": {
+    "aktualisiert": "2026-11-23T17:34:20.476Z",
+    "buffer_id": "6afda3b90aec53ca439a84cc",
+    "gesendet": "2026-11-23T17:30:00.000Z",
+    "werte": {
+     "comments": 0,
+     "engagementRate": 0,
+     "reactions": 0,
+     "views": 0
     }
    }
   }
@@ -2024,20 +2095,20 @@
    "name": "der EIGENE Ratgeber"
   }
  },
- "stand": "2026-11-22T14:53+00:00",
+ "stand": "2026-11-23T18:44+00:00",
  "summen_30_tage": {
   "instagram": {
-   "averageTimeWatched": 3.39,
+   "averageTimeWatched": 3.21,
    "comments": 4,
-   "engagementRate": 1.15,
+   "engagementRate": 1.12,
    "follows": 0,
    "postCount": 35,
-   "reach": 2358,
-   "reactions": 17,
+   "reach": 2234,
+   "reactions": 15,
    "saves": 5,
    "shares": 1,
-   "totalTimeWatched": 152.91,
-   "views": 2538
+   "totalTimeWatched": 143.28,
+   "views": 2404
   },
   "tiktok": {
    "averageTimeWatched": 0,
@@ -2045,17 +2116,17 @@
    "engagementRate": 0,
    "postCount": 23,
    "reach": 0,
-   "reactions": 6,
+   "reactions": 5,
    "shares": 0,
    "totalTimeWatched": 0,
    "views": 0
   },
   "youtube": {
    "comments": 0,
-   "engagementRate": 1.52,
-   "postCount": 21,
+   "engagementRate": 1.46,
+   "postCount": 22,
    "reactions": 30,
-   "views": 1976
+   "views": 2060
   }
  }
 }
