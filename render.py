@@ -22,6 +22,8 @@ CX = 505              # Mittelachse für Text (leicht links der Bildmitte)
 CAP_W = 660           # max. Breite eines Untertitel-Blocks
 HOOK_W = 720          # max. Breite der Aussage
 END_CARD = 2.4        # Schlusstafel mit Buch (nur bei Buchhinweis)
+TOP_Y = 330           # Serienlabel/Name: tiefer, damit Instagram-Vorschau und Ladeansicht oben nichts abschneiden (seit Charge 3)
+AUSKLANG = 1.4        # Stille nach dem letzten Wort (vorher 0,5 s: wirkte abgehackt)
 
 # ---------- Text und Stimme ----------
 def saetze(text):
@@ -303,7 +305,7 @@ def card_um(img, f, y_first, n_lines, lh, x0, x1, pad=56, alpha=0.9, extra=0):
     y0 = y_first + top - pad; y1 = y_first + (n_lines - 1) * lh + base + pad + int(f.size * 0.06) + extra
     card(img, (int(x0), int(y0), int(x1), int(y1)), alpha=alpha)
 
-def serien_pille(d, serie, f, P, x=90, y=246):
+def serien_pille(d, serie, f, P, x=90, y=TOP_Y):
     tw = d.textlength(serie, font=f); top, base = cap_v(f)
     d.rounded_rectangle((x - 22, y + top - 16, x + tw + 22, y + base + 16), 30, fill=P['acc'])
     d.text((x, y), serie, font=f, fill=(255, 255, 255) if P['acc'] != GOLD else NIGHT)
@@ -359,6 +361,8 @@ def render(beitrag, style, out, voice):
     nr = beitrag.get('serie_nummer')
     serie = beitrag['serie'].upper() + (f' #{nr}' if nr else '')
     with_end = bool(beitrag.get('endkarte', beitrag.get('buchhinweis')))   # Endtafel nur, wo gewollt (seit Charge 2: Tiefer)
+    # Buchcover im Startbild nur ab und zu: nie im dunklen Stil, sonst nur bei Beiträgen mit Buchhinweis
+    mit_cover = bool(beitrag.get('startcover', style in ('himmel', 'cover') and beitrag.get('buchhinweis')))
     zitat_von = beitrag.get('zitat_von')   # z. B. „Seneca“: wird unter der Aussage gezeigt
     with tempfile.TemporaryDirectory() as tmp:
         vt, sr, words, timing = build_audio(sentences, n_hook, voice, tmp, prof, beitrag['sprechtext'])
@@ -368,10 +372,14 @@ def render(beitrag, style, out, voice):
             env = np.ones(len(vt), np.float32); env[:cut] = g
             env[cut:cut + ramp] = np.linspace(g, 1.0, len(env[cut:cut + ramp]))
             vt = vt * env
-        tail = END_CARD if with_end else 0.5
+        # Stimme am Ende weich ausblenden (gegen Knacken), dann ruhiger Ausklang
+        fo = min(len(vt), int(0.06 * sr)); vt = vt.copy(); vt[-fo:] *= np.linspace(1.0, 0.0, fo)
+        tail = END_CARD if with_end else AUSKLANG
         total = len(vt) / sr + tail
         vt = np.pad(vt, (0, int(total * sr) - len(vt)))
         mix = vt + pad_music(len(vt), sr)
+        fi, fe = int(0.015 * sr), int(0.35 * sr)   # kurzes Ein- und Ausblenden der ganzen Spur (sauberer Loop)
+        mix[:fi] *= np.linspace(0.0, 1.0, fi); mix[-fe:] *= np.linspace(1.0, 0.0, fe)
         wav = os.path.join(tmp, 'a.wav'); write_wav(mix, sr, wav)
         bg = Background(style)
         P = PAL[style]
@@ -421,18 +429,18 @@ def render(beitrag, style, out, voice):
             if not (with_end and t >= end_start):
                 # Serienlabel (unterhalb der Plattform-Leiste)
                 serien_pille(d, serie, f_lab, P)
-                nm = 'Der eigene Ratgeber'; d.text((W - 90 - d.textlength(nm, font=f_lab), 250), nm, font=f_lab, fill=P['name'])
+                nm = 'Der eigene Ratgeber'; d.text((W - 90 - d.textlength(nm, font=f_lab), TOP_Y + 4), nm, font=f_lab, fill=P['name'])
                 if t < hook_end + 0.25:
                     a = 1.0   # Startbild: Aussage steht ab dem ersten Bild vollständig (auch Vorschaubild)
                     lines, lh = hook_lines, hook_lh; f_hook = f_hook_fit
                     top_, base_ = cap_v(f_hook)
-                    y = H * 0.40 - ((len(lines) - 1) * lh + base_ + top_) / 2
+                    y = H * 0.44 - ((len(lines) - 1) * lh + base_ + top_) / 2
                     fade = 1 if t < hook_end else max(0, 1 - (t - hook_end) / 0.25)
                     if style in ('himmel', 'cover'):
                         card_um(img, f_hook, y, len(lines), lh, CX - HOOK_W / 2 - 50, CX + HOOK_W / 2 + 50, pad=72, alpha=0.88 * fade, extra=80 if zitat_von else 0); d = ImageDraw.Draw(img)
                     # kleines Buchcover unter der Aussage (Wiedererkennung im Vorschaubild)
                     yb_ = y + (len(lines) - 1) * lh + base_ + 150 + (80 if zitat_von and style in ('himmel', 'cover') else 0)
-                    if fade > 0 and yb_ + cov_s.height < 1500:
+                    if mit_cover and fade > 0 and yb_ + cov_s.height < 1520:
                         cv = cov_s.convert('RGBA'); cv.putalpha(int(255 * fade))
                         img.alpha_composite(cv, (int(CX - cov_s.width / 2), int(yb_))); d = ImageDraw.Draw(img)
                     if style == 'tusche':
@@ -450,14 +458,14 @@ def render(beitrag, style, out, voice):
                     # Aussage bleibt klein oben stehen (Kontext für Späteinsteiger)
                     ta = ease((t - hook_end) / 0.5) * 0.75
                     for k, ln in enumerate(top_lines):
-                        d.text((90, 350 + k * 58), ln, font=f_top, fill=mixc(P['ink'], P['dimbg'], ta))
+                        d.text((90, TOP_Y + 104 + k * 58), ln, font=f_top, fill=mixc(P['ink'], P['dimbg'], ta))
                     # aktueller Untertitel-Block
                     ci = max([k for k, s0 in enumerate(ch_start) if s0 <= t + 0.04] or [0])
                     blk = chs[ci]; f_cap, cap_lines = cap_fit[ci]
                     since = t - ch_start[ci]; pop = ease(since / 0.12) if since >= 0 else 0
                     clh = int(f_cap.size * 1.22); top_, base_ = cap_v(f_cap)
                     widths = [d.textlength(' '.join(expl[q][0] for q in l), font=f_cap) for l in cap_lines]
-                    y = H * 0.56 - ((len(cap_lines) - 1) * clh + base_ + top_) / 2 + (1 - pop) * 14
+                    y = H * 0.58 - ((len(cap_lines) - 1) * clh + base_ + top_) / 2 + (1 - pop) * 14
                     if style in ('himmel', 'cover'):
                         card_um(img, f_cap, y, len(cap_lines), clh, CX - max(widths) / 2 - 44, CX + max(widths) / 2 + 44, pad=40, alpha=0.86); d = ImageDraw.Draw(img)
                     cur_q = max([q for q in blk if expl[q][1] <= t + 0.03] or [blk[0]])
